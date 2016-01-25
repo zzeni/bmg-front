@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <title>BeMyGuide</title>
+  <meta name="description" content="Find a perfect adventure guide">
+  <meta name="keywords" content="guide,adventure,travel,hiking,cycling,kayacking,paragliding,trecking">
+  <meta name="author" content="ZenifyTheWeb.com">
+  <link rel="stylesheet" media="all" href="css/slippry.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="css/base.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="css/static_application.css" data-turbolinks-track="true">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="esn9YqYp0VTQIOzV4v+GaBfW65J9h2IvV4p6m0PF3uCN0hk5c6b3v5MYJhFRnYN01lXofVMXdKDZ3M9x43CvWw==">
+</head>
+
+<body>
+  <nav class="navbar navbar-custom" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target=".navbar-main-collapse" data-toggle="collapse" type="button"><i class="fa fa-bars fa-2x animated"></i></button>
+      </div>
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden"><a href="#page-top">#page-top</a></li>
+          <li><a href="/users/sign_in"><span class="translation_missing" title="translation missing: en.main.layout.login">Login</span></a></li>
+          <li><a href="/users/sign_up"><span class="translation_missing" title="translation missing: en.main.layout.signup">Signup</span></a></li>
+          <li>
+            <a aria-expanded="false" aria-haspopup="true" class="logo dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+              <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="200 160 295 450" height="25" width="20" xml:space="preserve" version="1.1" id="svg2">
+                <metadata id="metadata8">
+                  <rdf:RDF>
+                    <cc:Work rdf:about="">
+                      <dc:format>image/svg+xml</dc:format>
+                      <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                    </cc:Work>
+                  </rdf:RDF>
+                </metadata>
+                <defs id="defs6" />
+                <g transform="matrix(1.25,0,0,-1.25,0,1592.3375)" id="g10">
+                  <g transform="scale(0.1,0.1)" id="g12">
+                    <path id="montains" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 3884.95,9553.03 141.72,177.93 -769.03,612.54 -482.39,-549.35 -580.53,435.25 -573.58,-555.49 158.27,-163.39 434.17,420.46 1281.41,-960.36 136.39,182.04 -673.54,504.66 327.66,373.18 599.45,-477.47" />
+                    <path id="baloon" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 2768.95,11054 c -582.5,0 -1056.41,-473.9 -1056.41,-1056.4 0,-209.78 59.28,-409.37 171.45,-577.19 130.18,-194.74 634.95,-795.88 861.46,-1063.5 l 839.9,970.18 c 154.03,186.21 240.01,425.21 240.01,670.51 0,582.5 -473.9,1056.4 -1056.41,1056.4 z m -25.33,-3149.68 c 0,0 -926.67,1085.92 -1104.7,1352.27 -144.72,216.48 -221.19,472.71 -221.19,741.01 0,745.1 606.16,1351.2 1351.22,1351.2 745.07,0 1351.23,-606.1 1351.23,-1351.2 0,-313.75 -110.02,-619.51 -309.79,-860.96 L 2743.62,7904.32" />
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">our story</a></li>
+              <li><a href="#">team</a></li>
+              <li><a href="#">terms and conditions</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li class="divider" role="separator"></li>
+              <li><a href="#">contact us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="notice"></div>
+  <div class="body-bg"></div>
+  <main>
+    <section id="intro">
+      <ul class="hidden-xs" id="slippry-slider">
+        <li>
+          <a><img src="/img/intro/1.jpg" alt="Rila mountain - Damga summit" /></a>
+        </li>
+        <li>
+          <a><img src="/img/intro/2.jpg" alt="Pirin mountain - Koncheto" /></a>
+        </li>
+        <li>
+          <a><img src="/img/intro/3.jpg" alt="Winter mountain in Bulgaria" /></a>
+        </li>
+        <li>
+          <a><img src="/img/intro/4.jpg" alt="photo by mayaeye" /></a>
+        </li>
+        <li>
+          <a><img src="/img/intro/5.jpg" alt="Anapurna - photo by Konstantin Velichkov" /></a>
+        </li>
+      </ul>
+      <div class="hidden-xs-up" id="small-screen-bg"><img src="/img/intro/xs-bg.jpg" alt="Anapurna - photo by Konstantin Velichkov" /></div>
+      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12" id="search">
+        <div class="row">
+          <h1>Find<span>your</span> <br /><span>adventure</span>guide </h1>
+          <p><em>Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.</em></p>
+          <div id="custom-search-form">
+            <form class="form-inline hidden-xs">
+              <div class="input-group block-center">
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-marker fa-2x"></i></span> -->
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-o fa-2x"></i></span>-->
+                <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-globe fa-2x"></i></span>
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
+                <input type="text" class="form-control input-lg" placeholder="places" describedby="inpit-addon-location">
+
+                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+                <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-compass fa-2x"></i></span>
+                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-cogs fa-2x"></i></span> -->
+                <input type="text" class="form-control input-lg" placeholder="activities" describedby="inpit-addon-activity">
+
+                <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="Search">
+              </div>
+            </form>
+
+            <form class="hidden-xs-up col-xs-10 col-xs-offset-1">
+              <div class="input-group">
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-marker fa-2x"></i></span> -->
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-o fa-2x"></i></span>-->
+                <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-globe fa-2x"></i></span>
+                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
+                <input type="text" class="form-control input-lg" placeholder="places" describedby="inpit-addon-location">
+              </div>
+              <div class="input-group">
+                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+                <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-compass fa-2x"></i></span>
+                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-cogs fa-2x"></i></span> -->
+                <input type="text" class="form-control input-lg" placeholder="activities" describedby="inpit-addon-activity">
+              </div>
+
+              <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="Search">
+            </form>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas" height="0" width="0" data-height-big="160" data-height-small="100"></canvas>
+    </section>
+    <section class="hidden" id="moto">
+      <div class="col-md-12">
+        <h2>"Life is meant for good friends and great adventures"</h2></div>
+    </section>
+    <section id="moto-2">
+      <div class="col-md-12">
+        <h2>"Life is meant for good friends and great adventures"</h2></div>
+    </section>
+    <section class="hidden" id="activities"></section>
+    <section class="hidden info-boxes" id="how-it-works">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-6 first">
+            <div class="rotated">
+              <h3 class="front">how it works</h3>
+              <h3 class="back">how it works</h3></div>
+            <p>Just tell us your next destination and we'll find the best matching local guides for you.</p><a class="btn btn-default" href="#">read more</a></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 second">
+            <div class="rotated">
+              <h3 class="front">it's easy</h3>
+              <h3 class="back">it's easy</h3></div>
+            <p>Joining BeMyGuide's community takes only few easy steps. Once in, you're all set to explore the world!</p><a class="btn btn-default" href="#">read more</a></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 third">
+            <div class="rotated">
+              <h3 class="front">what you get</h3>
+              <h3 class="back">what you get</h3></div>
+            <p>With us you get the freedom to chose the type, the place and the company for your adventure.</p><a class="btn btn-default" href="#">read more</a></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 fourth">
+            <div class="rotated">
+              <h3 class="front">you'll love it! :)</h3>
+              <h3 class="back">you'll love it! :)</h3></div>
+            <p>You'll see places you've never imagined before. You'll get to know people you've always wanted to know!</p><a class="btn btn-default" href="#">read more</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="hidden" id="second-intro">
+      <div class="col-md-12"></div>
+    </section>
+  </main>
+  <footer>
+    <div class="container" id="copyright">
+      <div class="text-center">
+        <p>Copyright © BeMyGuide 2015</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.js" data-turbolinks-track="true"></script>
+  <script src="js/jquery_ujs.js" data-turbolinks-track="true"></script>
+<!--  <script src="js/turbolinks.js" data-turbolinks-track="true"></script>-->
+  <script src="js/bootstrap/transition.js" data-turbolinks-track="true"></script>
+<!--  <script src="js/bootstrap/alert.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/modal.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/dropdown.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/scrollspy.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/tab.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/tooltip.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/popover.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/button.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/collapse.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/carousel.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap/affix.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap.js" data-turbolinks-track="true"></script>-->
+  <script src="js/slippry.js" data-turbolinks-track="true"></script>
+<!--  <script src="js/ajax-setup.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/bootstrap_002.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/grayscale.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/signup-form.js" data-turbolinks-track="true"></script>-->
+  <script src="js/main.js" data-turbolinks-track="true"></script>
+<!--  <script src="js/users.js" data-turbolinks-track="true"></script>-->
+<!--  <script src="js/static_application.js" data-turbolinks-track="true"></script>-->
+</body>
+
+</html>
