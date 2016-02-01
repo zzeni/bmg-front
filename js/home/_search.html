@@ -1,0 +1,48 @@
+<ul class="dropdown-menu activity-dropdown-menu">
+  <li data-ng-repeat="activity in activities | filter: activityFilter "><a href="#" data-ng-click="pickActivity(activity.name)">{{ activity.name }}</a></li>
+</ul>
+
+<div id="search" class="text-center col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+  <div class="row">
+    <h1>Find<span>your</span><br /><span>adventure</span>guide </h1>
+    <p><em>Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.</em></p>
+    <div id="custom-search-form">
+      <form class="form-inline hidden-xs">
+        <div class="input-group block-center">
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-marker fa-2x"></i></span> -->
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-o fa-2x"></i></span>-->
+          <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-globe fa-2x"></i></span>
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
+          <input type="text" class="form-control input-lg" placeholder="places" describedby="inpit-addon-location">
+
+          <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+          <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-compass fa-2x"></i></span>
+          <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-cogs fa-2x"></i></span> -->
+          <input class="form-control input-lg activity-dropdown" type="text" placeholder="actions" data-ng-model="activityFilter">
+          <span class="input-group-addon activity-dropdown-toggle caret"><i class="fa fa-arrow-down"></i></span>
+          <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="Search">
+        </div>
+      </form>
+
+      <form class="hidden-xs-up col-xs-10 col-xs-offset-1">
+        <div class="input-group">
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-marker fa-2x"></i></span> -->
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-o fa-2x"></i></span>-->
+          <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-globe fa-2x"></i></span>
+          <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
+          <input type="text" class="form-control input-lg" placeholder="places" describedby="inpit-addon-location">
+        </div>
+        <div class="input-group">
+          <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+          <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-compass fa-2x"></i></span>
+          <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-cogs fa-2x"></i></span> -->
+          <input type="text" class="form-control input-lg" placeholder="activities" describedby="inpit-addon-activity"  data-ng-model="activityFilter">
+          <span class="input-group-addon caret"><i class="fa fa-arrow-down"></i></span>
+        </div>
+        <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="Search">
+      </form>
+    </div>
+  </div>
+</div>

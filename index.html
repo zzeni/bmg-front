@@ -19,14 +19,12 @@
 <!--  <link rel="stylesheet" id="options_typography_Pacifico-css" href="//fonts.googleapis.com/css?family=Pacifico&amp;subset=latin" type="text/css" media="all">-->
   <script src="vendor/js/angular.min.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/utils/activities.js"></script>
+  <script src="js/home/initializer.js"></script>
+  <script src="js/home/homeController.js"></script>
 </head>
 
-<body data-ng-app="main" data-ng-controller="searchController">
-  <div class="body-bg"></div>
-  <ul class="dropdown-menu activity-dropdown-menu">
-    <li data-ng-repeat="activity in activities | filter: activityFilter "><a href="#" data-value="{{ activity.name }}">{{ activity.name }}</a></li>
-  </ul>
-
+<body data-ng-app="bmg">
   <nav class="navbar navbar-custom" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -72,79 +70,13 @@
     </div>
   </nav>
   <div id="notice"></div>
-  <main>
-    <section id="intro">
-      <ul class="hidden-xs" id="slippry-slider">
-        <li>
-          <a><img src="/img/intro/1.jpg" alt="Rila mountain - Damga summit" /></a>
-        </li>
-        <li>
-          <a><img src="/img/intro/2.jpg" alt="Pirin mountain - Koncheto" /></a>
-        </li>
-        <li>
-          <a><img src="/img/intro/3.jpg" alt="Winter mountain in Bulgaria" /></a>
-        </li>
-        <li>
-          <a><img src="/img/intro/4.jpg" alt="photo by mayaeye" /></a>
-        </li>
-        <li>
-          <a><img src="/img/intro/5.jpg" alt="Anapurna - photo by Konstantin Velichkov" /></a>
-        </li>
-      </ul>
-      <div class="hidden-xs-up" id="small-screen-bg"><img src="/img/intro/xs-bg.jpg" alt="Anapurna - photo by Konstantin Velichkov" /></div>
-      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12" id="search">
-        <div class="row">
-          <h1>Find<span>your</span> <br /><span>adventure</span>guide </h1>
-          <p><em>Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.</em></p>
-          <div id="custom-search-form">
-            <form class="form-inline hidden-xs">
-              <div class="input-group block-center">
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-location-arrow fa-2x"></i></span> -->
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-marker fa-2x"></i></span> -->
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-o fa-2x"></i></span>-->
-                <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-globe fa-2x"></i></span>
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
-                <input type="text" class="form-control input-lg" placeholder="places" describedby="inpit-addon-location">
 
-                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-location-arrow fa-2x"></i></span> -->
-                <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-compass fa-2x"></i></span>
-                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-cogs fa-2x"></i></span> -->
-                <input class="form-control input-lg activity-dropdown" type="text" placeholder="actions" data-ng-model="activityFilter">
-                <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="Search">
-              </div>
-            </form>
+  <main data-ng-controller="homeController">
 
-            <form class="hidden-xs-up col-xs-10 col-xs-offset-1">
-              <div class="input-group">
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-location-arrow fa-2x"></i></span> -->
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-marker fa-2x"></i></span> -->
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-map-o fa-2x"></i></span>-->
-                <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-globe fa-2x"></i></span>
-                <!-- <span class="input-group-addon" id="inpit-addon-location"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
-                <input type="text" class="form-control input-lg" placeholder="places" describedby="inpit-addon-location">
-              </div>
-              <div class="input-group">
-                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-location-arrow fa-2x"></i></span> -->
-                <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-compass fa-2x"></i></span>
-                <!-- <span class="input-group-addon" id="inpit-addon-activity"><i class="fa fa-cogs fa-2x"></i></span> -->
-                <input type="text" class="form-control input-lg" placeholder="activities" describedby="inpit-addon-activity">
-                <span  class="input-group-addon caret"></span>
-              </div>
-              <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="Search">
-            </form>
-          </div>
-        </div>
-      </div>
-      <canvas id="canvas" height="0" width="0" data-height-big="160" data-height-small="100"></canvas>
-    </section>
-    <section class="hidden" id="moto">
-      <div class="col-md-12">
-        <h2>"Life is meant for good friends and great adventures"</h2></div>
-    </section>
-    <section id="moto-2">
-      <div class="col-md-12">
-        <h2>"Life is meant for good friends and great adventures"</h2></div>
-    </section>
+    <ng-include src="'js/home/_intro.html'" onload="initializeIntro()"></ng-include>
+    <ng-include src="'js/home/_search.html'" onload="initializeSearch()"></ng-include>
+
+
     <section class="hidden" id="activities"></section>
     <section class="hidden info-boxes" id="how-it-works">
       <div class="container">
@@ -189,13 +121,13 @@
   <script src="vendor/js/bootstrap/transition.js" data-turbolinks-track="true"></script>
 <!--  <script src="vendor/js/bootstrap/alert.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap/modal.js" data-turbolinks-track="true"></script>-->
-<!--  <script src="vendor/js/bootstrap/dropdown.js" data-turbolinks-track="true"></script>-->
+  <script src="vendor/js/bootstrap/dropdown.js" data-turbolinks-track="true"></script>
 <!--  <script src="vendor/js/bootstrap/scrollspy.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap/tab.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap/tooltip.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap/popover.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap/button.js" data-turbolinks-track="true"></script>-->
-<!--  <script src="vendor/js/bootstrap/collapse.js" data-turbolinks-track="true"></script>-->
+  <script src="vendor/js/bootstrap/collapse.js" data-turbolinks-track="true"></script>
 <!--  <script src="vendor/js/bootstrap/carousel.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap/affix.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="vendor/js/bootstrap.js" data-turbolinks-track="true"></script>-->
@@ -203,7 +135,7 @@
 <!--  <script src="js/ajax-setup.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="js/grayscale.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="js/signup-form.js" data-turbolinks-track="true"></script>-->
-  <script src="js/main.js" data-turbolinks-track="true"></script>
+<!--  <script src="js/main.js" data-turbolinks-track="true"></script>-->
 <!--  <script src="js/users.js" data-turbolinks-track="true"></script>-->
 </body>
 

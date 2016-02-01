@@ -1,0 +1,36 @@
+{
+  "name": "bmg-front",
+  "homepage": "https://github.com/zzeni/bmg-front",
+  "authors": [
+    "Evgenia Manolova <emanolova@gmail.com>"
+  ],
+  "description": "BeMyGuide front-end application",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "guide",
+    "adventure",
+    "travel",
+    "explore",
+    "outdoor",
+    "hiking"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-translate": "~2.9.0",
+    "jquery": "~2.2.0",
+    "karma": "~0.4.6",
+    "angular": "^1.4.9",
+    "angular-ui-router": "^0.2.17",
+    "bootstrap": "^3.3.6"
+  }
+}
