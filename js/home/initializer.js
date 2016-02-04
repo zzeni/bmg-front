@@ -140,7 +140,7 @@ bmg.factory('initializer', [function () {
       slideShow(canvas);
 
       setInterval(
-        slideShow, 8000, canvas
+        slideShow, 30000, canvas
       );
 
       $(window).on('resize', function () {
