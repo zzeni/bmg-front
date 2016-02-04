@@ -7,7 +7,7 @@
   "description": "BeMyGuide front-end application",
   "main": "",
   "moduleType": [
-    "node"
+    "angularjs"
   ],
   "keywords": [
     "guide",
@@ -27,10 +27,14 @@
   ],
   "dependencies": {
     "angular-translate": "~2.9.0",
-    "jquery": "~2.2.0",
-    "karma": "~0.4.6",
+#    "jquery": "~2.2.0",
+#    "karma": "~0.4.6",
     "angular": "^1.4.9",
-    "angular-ui-router": "^0.2.17",
-    "bootstrap": "^3.3.6"
+#    "angular-ui-router": "^0.2.17",
+#    "bootstrap": "^3.3.6",
+    "angular-translate-storage-local": "^2.9.0",
+    "angular-translate-storage-cookie": "^2.9.0",
+    "angular-cookies": "^1.4.9",
+    "angular-translate-loader-static-files": "^2.9.0"
   }
 }

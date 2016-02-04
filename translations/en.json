@@ -1,0 +1,15 @@
+{
+  "home": {
+    "intro": {
+      "INTRO_CAPTION": "Find<span>your</span><br><span>adventure</span>guide",
+      "INTRO_TEXT": "Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.",
+      "MOTO": "\"Life is meant for good friends and great adventures\""
+    }
+  },
+  "layout": {
+    "nav": {
+      "signup": "Sign up",
+      "login": "Log in"
+    }
+  }
+}

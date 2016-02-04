@@ -1,31 +1,36 @@
 bmg.factory('initializer', [function () {
   "use strict";
 
-  var windowObj = $(window);
-  var bgImgId = 1;
+  var factory, slideShow, showMoto, fitIntro, updateCanvas, flowControlError,
+      fitSearch, fitActivityDropdown1, fitActivityDropdown2, sumElementsWidth;
 
-  var flowControlError = function flowControlError(msg) {
+  var windowObj = $(window),
+    bgImgId = 1;
+
+  flowControlError = function flowControlError(msg) {
     if (msg === undefined || !msg) msg = 'flow control error';
     var error = new Error(msg);
     error.isFlowControl = true;
     return error;
-  }
+  };
 
-  var slideShow = function slideShow(introObj) {
+  slideShow = function slideShow(introObj) {
+    document.getElementById('bgLoading').className = introObj.className;
     introObj.className = 'intro-bg-' + bgImgId;
     bgImgId = bgImgId % 5 + 1;
   };
 
-  var fitIntro = function fitIntro(introObj) {
+  fitIntro = function fitIntro(introObj) {
     introObj.width = windowObj.outerWidth();
     introObj.height = Math.max(windowObj.outerHeight(), 680);
   };
 
-  var showMoto = function showMoto(canvas) {
-    var counter = 0;
-    var drawCanvas = function drawCanvas() {
+  showMoto = function showMoto(canvas) {
+    var counter = 0,
+      drawCanvas, intId, stopDrawing;
+    drawCanvas = function drawCanvas() {
       try {
-        canvas.setAttribute('data-drawing-step', counter)
+        canvas.setAttribute('data-drawing-step', counter);
         updateCanvas(canvas);
         if (canvas.hasAttribute('data-drawing-done')) {
           throw flowControlError('drawing is done.');
@@ -34,31 +39,30 @@ bmg.factory('initializer', [function () {
       } catch (error) {
         if (error.isFlowControl) {
           console.log(error.message);
-        }
-        else {
+        } else {
           console.error(error);
         }
         return stopDrawing();
       }
     };
-    var intId = setInterval(drawCanvas, 10);
-    var stopDrawing = function stopDrawing() {
+    intId = setInterval(drawCanvas, 10);
+    stopDrawing = function stopDrawing() {
       return clearInterval(intId);
     };
   };
 
-  var updateCanvas = function updateCanvas(canvas) {
+  updateCanvas = function updateCanvas(canvas) {
     var ctx, height, middle, width, curveHeight, step, offset;
 
     width = canvas.width;
     height = canvas.height;
     middle = width / 2;
 
-    curveHeight = Math.min(160, height*0.7);
+    curveHeight = Math.min(160, height * 0.7);
     step = canvas.getAttribute('data-drawing-step');
-    offset = (width >= 992)? 0 : (width < 768) ? step/2 : step/4;
+    offset = (width >= 992) ? 0 : (width < 768) ? step / 2 : step / 4;
 
-    if (step >= curveHeight/2 && !$('#moto h2').hasClass('focused')) {
+    if (step >= curveHeight / 2 && !$('#moto h2').hasClass('focused')) {
       $('#moto h2').addClass('focused');
     }
     if (step >= curveHeight && !canvas.getAttribute('data-drawing-done')) {
@@ -76,14 +80,13 @@ bmg.factory('initializer', [function () {
     return ctx.fill();
   };
 
-  var fitSearch = function fitSearch() {
-    var intro_height, navbar_height, proposed_offset, search, searchOutlineTop, serach_height;
+  fitSearch = function fitSearch() {
+    var intro_height, intro_offset, navbar_height, proposed_offset, search, searchOutlineTop, serach_height;
 
     search = $('#search');
-    intro_height = document.getElementById('introCanvas').height;
-    navbar_height = $('.navbar-custom').outerHeight();
+    var introObj = document.getElementById('introCanvas');
+    intro_height = introObj.height;
     searchOutlineTop = Number(search.css('outline-width').match(/^(\d+)\D/)[1]);
-    proposed_offset = searchOutlineTop;
     serach_height = search.outerHeight() + 2 * searchOutlineTop;
     if (windowObj.outerWidth() > 767) {
       proposed_offset = (intro_height - serach_height) / 3;
@@ -91,33 +94,53 @@ bmg.factory('initializer', [function () {
       proposed_offset = (intro_height - serach_height) / 2;
     }
     return search.offset({
-      top: Math.max(navbar_height, proposed_offset) + searchOutlineTop
+      top: proposed_offset + searchOutlineTop
     });
   };
 
-  var fitActivityDropdown = function fitActivityDropdown() {
-    var dropdownInput = $('.activity-dropdown');
-    var offsetTop = dropdownInput.offset().top + dropdownInput.outerHeight();
-    $('.activity-dropdown-menu').css({
+  sumElementsWidth = function (elArray) {
+    var result = 0, widths = elArray.map(function() { return $(this).outerWidth(); });
+    $.each(widths, function (i) { result = result + widths[i]; });
+    return result;
+  };
+
+  fitActivityDropdown1 = function fitActivityDropdown1() {
+    var dropdownMenu = $('.activity-dropdown-menu-1'),
+        dropdownToggle = $('.activity-dropdown-1:first'),
+        offsetTop = dropdownToggle.offset().top + dropdownToggle.outerHeight(),
+        comulWidth = sumElementsWidth($('.activity-dropdown-1'));
+    dropdownMenu.css({
       top: offsetTop + 'px',
-      left: dropdownInput.offset().left + 'px'
+      left: dropdownToggle.offset().left + 'px'
     });
-    $('.activity-dropdown-menu').width(dropdownInput.outerWidth());
+    dropdownMenu.width(comulWidth);
   };
 
-  var factory = {
+  fitActivityDropdown2 = function fitActivityDropdown2() {
+    var dropdownMenu = $('.activity-dropdown-menu-2'),
+        dropdownToggle = $('.activity-dropdown-2:first'),
+        offsetTop = dropdownToggle.offset().top + dropdownToggle.outerHeight(),
+        comulWidth = sumElementsWidth($('.activity-dropdown-2'));
+    dropdownMenu.css({
+      top: offsetTop + 'px',
+      left: dropdownToggle.offset().left + 'px'
+    });
+    dropdownMenu.width(comulWidth);
+  };
+
+  factory = {
     initializeIntro: function initialize() {
 
       console.log("initializing intro..");
 
-//      $(window).scrollTop(0);
+      //      $(window).scrollTop(0);
 
       var canvas = document.getElementById('introCanvas');
 
       slideShow(canvas);
 
       setInterval(
-        slideShow, 30000, canvas
+        slideShow, 8000, canvas
       );
 
       $(window).on('resize', function () {
@@ -133,40 +156,53 @@ bmg.factory('initializer', [function () {
     initializeSearch: function initializeSearch() {
       $(window).on("resize", function () {
         fitSearch();
+        $('.activity-dropdown-menu-1').removeClass('open');
+        $('.activity-dropdown-menu-2').removeClass('open');
+        $('.activity-dropdown-1.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        $('.activity-dropdown-2.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
       });
-      setTimeout(fitSearch,200);
+      setTimeout(fitSearch, 200);
 
-      $('#search input').focus(function () {
-        return $('#custom-search-input').addClass('hover');
+      $('.activity-dropdown-1').on('click', function () {
+        if ($(this).hasClass('caret')) {
+          $('.activity-dropdown-menu-1').toggleClass('open');
+          $('.activity-dropdown-1.caret .fa').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+        } else if (!$('.activity-dropdown-menu-1').hasClass('open')) {
+          $('.activity-dropdown-menu-1').addClass('open');
+          $('.activity-dropdown-1.caret .fa').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        }
+        if ($('.activity-dropdown-menu-1').hasClass('open')) fitActivityDropdown1();
       });
 
-      $('#search input').blur(function () {
-        return $('#custom-search-input').removeClass('hover');
-      });
-
-      $('.activity-dropdown').on('click', function () {
-        fitActivityDropdown();
-        $('.activity-dropdown-menu').show();
-      });
-      $('.activity-dropdown-toggle').on('click', function () {
-        fitActivityDropdown();
-        $('.activity-dropdown-menu').toggle();
+      $('.activity-dropdown-2').on('click', function () {
+        if ($(this).hasClass('caret')) {
+          $('.activity-dropdown-menu-2').toggleClass('open');
+          $('.activity-dropdown-2.caret .fa').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
+        } else if (!$('.activity-dropdown-menu-2').hasClass('open')) {
+          $('.activity-dropdown-menu-2').addClass('open');
+          $('.activity-dropdown-2.caret .fa').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        }
+        if ($('.activity-dropdown-menu-2').hasClass('open')) fitActivityDropdown2();
       });
     },
 
     initializeHowItWorks: function initializeHowItWorks() {
       $(window).on('scroll', function () {
-        return showInfoBoxes();
+        //        return showInfoBoxes();
       });
 
       $(window).on('resize', function () {
-        return showInfoBoxes();
+        //        return showInfoBoxes();
       });
     },
 
     pickActivity: function pickActivity(value) {
-      $('.activity-dropdown').val(value);
-      $('.activity-dropdown-menu').hide();
+      $('input.activity-dropdown-1').val(value);
+      $('input.activity-dropdown-2').val(value);
+      $('.activity-dropdown-menu-1').removeClass('open');
+      $('.activity-dropdown-menu-2').removeClass('open');
+      $('.activity-dropdown-1.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+      $('.activity-dropdown-2.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
     }
   };
 
