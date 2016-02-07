@@ -7,11 +7,29 @@
   <meta name="description" content="Find a perfect adventure guide">
   <meta name="keywords" content="guide,adventure,travel,hiking,cycling,kayacking,paragliding,trecking">
   <meta name="author" content="ZenifyTheWeb.com">
-  <meta name="csrf-param" content="authenticity_token">
-  <meta name="csrf-token" content="esn9YqYp0VTQIOzV4v+GaBfW65J9h2IvV4p6m0PF3uCN0hk5c6b3v5MYJhFRnYN01lXofVMXdKDZ3M9x43CvWw==">
+  <!-- Favicon start -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Favicon end -->
+  <!--  <meta name="csrf-param" content="authenticity_token">-->
+  <!--  <meta name="csrf-token" content="esn9YqYp0VTQIOzV4v+GaBfW65J9h2IvV4p6m0PF3uCN0hk5c6b3v5MYJhFRnYN01lXofVMXdKDZ3M9x43CvWw==">-->
   <title>BeMyGuide</title>
   <link rel="stylesheet" media="all" href="css/base.css" data-turbolinks-track="true">
-  <link rel="stylesheet" media="all" href="/vendor/css/slippry.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="vendor/css/slippry.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="css/style.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="css/new_style.css" data-turbolinks-track="true">
   <!--  <link href='https://fonts.googleapis.com/css?family=Caveat:400,700' rel='stylesheet' type='text/css'>-->
@@ -22,6 +40,9 @@
   <script src="vendor/bower_components/angular-translate/angular-translate.min.js"></script>
   <script src="vendor/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
   <script src="vendor/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+  <script src="vendor/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
   <script src="js/app.js"></script>
   <script src="js/utils/utils.js"></script>
   <script src="js/home/initializer.js"></script>
@@ -35,7 +56,7 @@
   <div id="notice"></div>
 
   <ng-include src="'js/utils/_lang_select.html'"></ng-include>
-  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()"></ng-include>
+  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()" autoscroll="true"></ng-include>
   <ng-include src="'js/home/_search.html'" onload="initializeSearch()"></ng-include>
   <ng-include src="'js/home/_activities_section.html'"></ng-include>
   <ng-include src="'js/home/_whybemyguide_section.html'"></ng-include>

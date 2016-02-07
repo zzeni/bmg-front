@@ -1,9 +1,9 @@
-bmg.factory('utils', ['$translate', function ($translate) {
+bmg.factory('utils', ['$translate', 'api', 'LANGUAGE_KEYS', function ($translate, api, LANGUAGE_KEYS) {
   "use strict";
 
   var factory = {};
 
-  factory.ActivitiesFallbackData = [
+  factory.activitiesFallbackData = [
     { name: 'biking', translation_key: 'biking' },
     { name: 'cannoeing', translation_key: 'cannoeing' },
     { name: 'canyoning', translation_key: 'canyoning' },
@@ -25,6 +25,20 @@ bmg.factory('utils', ['$translate', function ($translate) {
     { name: 'trekking', translation_key: 'trekking' }
   ];
 
+  factory.loadActivities = function loadActivities(scope) {
+    console.log('Retrieving the list of activities ..');
+
+    api.get('/activities.json')
+    .success(function(data) {
+      scope.activities = data;
+      console.log(scope.activities.length + ' activities obtained.');
+    })
+    .error(function (error) {
+      console.log('Error while getting activities list! ' + error);
+      scope.activities = factory.activitiesFallbackData;
+    });
+  };
+
   factory.getCurrentLanguage = function getCurrentLanguage() {
     return $translate.use() ||
     $translate.storage().get($translate.storageKey()) ||
@@ -32,7 +46,7 @@ bmg.factory('utils', ['$translate', function ($translate) {
   };
 
   factory.getLanguages = function getLanguages() {
-    return languageKeys;
+    return LANGUAGE_KEYS;
   };
 
   factory.changeLanguage = function changeLanguage(langKey) {

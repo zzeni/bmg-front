@@ -2,19 +2,7 @@ bmg.controller('homeController', ['$scope', 'initializer', 'utils', '$http', fun
 
   $scope.activities = [];
 
-  console.log('Getting the activities list..');
-
-  $http.get('http://api.bemyguide-dev.com:3000/activities.json')
-  .success(function(data) {
-    $scope.activities = data;
-    console.log($scope.activities.length + ' activities obtained.');
-  })
-  .error(function (error) {
-    console.log('Error while getting activities list! ' + error);
-    $scope.activities = utils.ActivitiesFallbackData;
-  });
-
-//  utils.loadActivities();
+  utils.loadActivities($scope);
 
   $scope.initializeIntro = initializer.initializeIntro;
   $scope.initializeSearch = initializer.initializeSearch;

@@ -1,21 +1,22 @@
-var languageKeys = ['en', 'es'];
-var bmg = angular.module('bmg', ['pascalprecht.translate', 'ngCookies'])
-  .config(['$translateProvider', function ($translateProvider) {
-    "use strict";
+var bmg = angular.module('bmg', ['pascalprecht.translate', 'ngCookies', 'apiService', 'config']);
 
-    $translateProvider
-      .registerAvailableLanguageKeys(languageKeys, {
-        'en_US': 'en',
-        'en_UK': 'en'
-      })
-      .useStaticFilesLoader({
-        prefix: '/translations/',
-        suffix: '.json'
-      })
-      .determinePreferredLanguage()
-      .fallbackLanguage('en')
-      .useCookieStorage();
+bmg.config(['$translateProvider', 'LANGUAGE_KEYS', function ($translateProvider, LANGUAGE_KEYS) {
+  "use strict";
 
-    // Enable escaping of HTML
-    $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
-  }]);
+  $translateProvider
+    .registerAvailableLanguageKeys(LANGUAGE_KEYS, {
+      'en_US': 'en',
+      'en_UK': 'en'
+    })
+    .useStaticFilesLoader({
+      prefix: '/translations/',
+      suffix: '.json'
+    })
+    .determinePreferredLanguage()
+    .fallbackLanguage('en')
+    .useCookieStorage();
+
+  // Enable escaping of HTML
+  $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
+}]);
+
