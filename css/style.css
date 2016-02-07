@@ -50,8 +50,6 @@
     margin: 4px 0;
     box-shadow: 0 0 1px 1px #333;
     opacity: 0.8;
-    font-weight: inherit;
-    background-color: #46b8da;
   }
   .navbar-custom li:hover,
   .navbar-custom li a:hover {
@@ -141,6 +139,14 @@
     padding: 5px 15px 0 15px;
   }
 }
+
+.navbar-custom li a,
+.navbar-custom li a:hover,
+.navbar-custom li a:visited,
+.navbar-custom li a:focus {
+  font-weight: normal;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -564,11 +570,45 @@ section.info-boxes .focused:hover .front {
 #languageSelect {
   position: absolute;
   padding: 14px 0 0 5px;
+  z-index: 99;
+}
+
+#languageSelect .btn {
+  -webkit-transition: all 1.2s ease-in-out;
+  -moz-transition: all 1.2s ease-in-out;
+  transition: all 1.2s ease-in-out;
 }
 
 #languageSelect .btn span {
   margin-left: .3em;
   margin-right: -0.3em;
+}
+
+#languageSelect ul.dropdown-menu {
+  border-radius: 5px;
+  position: static;
+  margin: 0;
+  padding: 4px 0;
+  display: block;
+
+  -webkit-transition: all 1.2s ease-in-out;
+  -moz-transition: all 1.2s ease-in-out;
+  transition: all 1.2s ease-in-out;
+}
+#languageSelect ul.dropdown-menu li {
+  display: inline-block;
+}
+#languageSelect ul.dropdown-menu li a {
+  color: white;
+}
+#languageSelect ul.dropdown-menu li a:hover,
+#languageSelect ul.dropdown-menu li a:focus,
+#languageSelect ul.dropdown-menu li a:visited {
+  color: #46b8da;
+}
+#languageSelect ul.dropdown-menu li a:focus,
+#languageSelect ul.dropdown-menu li a:visited {
+  background: transparent;
 }
 
 .btn-transparrent,
@@ -587,6 +627,9 @@ section.info-boxes .focused:hover .front {
   display: none;
   box-sizing: border-box;
   margin: 0;
+  max-height: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .activity-dropdown-menu-1.open,
 .activity-dropdown-menu-2.open {
@@ -595,4 +638,15 @@ section.info-boxes .focused:hover .front {
 .activity-dropdown-menu-1 li,
 .activity-dropdown-menu-2 li {
 /*  padding-left: 2em;*/
+}
+.activity-ajax-loader {
+  padding: 2em 0 4em 0;
+  text-align: center;
+  -webkit-transition: all 1.2s ease;
+  -moz-transition: all 1.2s ease;
+  transition: all 1.2s ease;
+}
+.activity-ajax-loader img {
+  width: 5em;
+/*  margin: 0 auto;*/
 }

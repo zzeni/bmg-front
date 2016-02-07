@@ -1,0 +1,9 @@
+<div id="languageSelect">
+  <!-- Single button -->
+  <button type="button" class="btn btn-transparrent" ng-mouseover="langSelectOpen = true" ng-hide="langSelectOpen" ng-show="!langSelectOpen">
+    {{ getCurrentLanguage() | uppercase }}<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu btn-transparrent" ng-mouseleave="langSelectOpen = false" ng-show="langSelectOpen" ng-hide="!langSelectOpen">
+    <li data-ng-repeat="lang in getLanguages()"><a ng-click="changeLanguage(lang)" href="#">{{ lang }}</a></li>
+  </ul>
+</div>

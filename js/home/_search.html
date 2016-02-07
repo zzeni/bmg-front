@@ -1,9 +1,15 @@
 <ul class="dropdown-menu activity-dropdown-menu-1">
   <li data-ng-repeat="activity in activities | filter: activityFilter1"><a href="#" data-ng-click="pickActivity(activity.name)">{{ activity.name }}</a></li>
+  <li class="activity-ajax-loader" ng-show="!activities.length" ng-hide="activities.length">
+    <img src="/img/baloon-blue-loading-rotate.gif">
+  </li>
 </ul>
 
 <ul class="dropdown-menu activity-dropdown-menu-2">
   <li data-ng-repeat="activity in activities | filter: activityFilter2"><a href="#" data-ng-click="pickActivity(activity.name)">{{ activity.name }}</a></li>
+  <li class="activity-ajax-loader" ng-show="!activities.length" ng-hide="activities.length">
+    <img src="/img/baloon-blue-loading-rotate.gif">
+  </li>
 </ul>
 
 <div id="search" class="text-center col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
