@@ -5,7 +5,8 @@ bmg.factory('initializer', [function () {
       fitSearch, fitActivityDropdown1, fitActivityDropdown2, sumElementsWidth;
 
   var windowObj = $(window),
-    bgImgId = 1;
+      imgPrependObj = document.getElementById('imgPrepend'),
+      bgImgId = 1;
 
   flowControlError = function flowControlError(msg) {
     if (msg === undefined || !msg) msg = 'flow control error';
@@ -15,9 +16,10 @@ bmg.factory('initializer', [function () {
   };
 
   slideShow = function slideShow(introObj) {
-    document.getElementById('bgLoading').className = introObj.className;
     introObj.className = 'intro-bg-' + bgImgId;
     bgImgId = bgImgId % 5 + 1;
+    if (typeof(imgPrependObj) === "object" && imgPrependObj != null)
+      imgPrependObj.className = 'intro-bg-' + bgImgId;
   };
 
   fitIntro = function fitIntro(introObj) {

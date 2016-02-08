@@ -5,5 +5,40 @@
       "INTRO_TEXT": "Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.",
       "MOTO": "\"Life is meant for good friends and great adventures\""
     }
+  },
+  "layout": {
+    "nav": {
+      "signup": "Iniciar sesión",
+      "login": "Registrarse",
+      "logout": "Cerrar sesión"
+    }
+  },
+  "utils": {
+    "search": {
+      "places": "sitios",
+      "activities": "actividades",
+      "search": "Buscar"
+    },
+    "activities": {
+      "biking": "biking",
+      "cannoeing": "cannoeing",
+      "canyoning": "canyoning",
+      "caving": "caving",
+      "climbing": "climbing",
+      "cycling": "cycling",
+      "high_montain": "montaña alta",
+      "hiking": "hiking",
+      "ice_climbing": "ice climbing",
+      "kayaking": "kayaking",
+      "paragliding": "paragliding",
+      "rafting": "rafting",
+      "scuba": "scuba",
+      "ski_touring": "ski touring",
+      "skydiving": "skydiving",
+      "snowshoeing": "snowshoeing",
+      "wind_surfing": "wind surfing",
+      "kite_surfing": "kite surfing",
+      "trekking": "trekking"
+    }
   }
 }
