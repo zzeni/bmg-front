@@ -1,4 +1,4 @@
-bmg.factory('utils', ['$translate', 'api', 'config', function ($translate, api, config) {
+bmg.factory('utils', ['$log', '$translate', 'api', 'config', function ($log, $translate, api, config) {
   "use strict";
 
   var factory = {};
@@ -26,15 +26,15 @@ bmg.factory('utils', ['$translate', 'api', 'config', function ($translate, api, 
   ];
 
   factory.loadActivities = function loadActivities(scope) {
-    console.log('Retrieving the list of activities ..');
+    $log.debug('Retrieving the list of activities ..');
 
     api.get('/activities.json')
     .success(function(data) {
       scope.activities = data;
-      console.log(scope.activities.length + ' activities obtained.');
+      $log.debug(scope.activities.length + ' activities obtained.');
     })
     .error(function (error) {
-      console.log('Error while getting activities list! ' + error);
+      $log.debug('Error while getting activities list! ' + error);
       scope.activities = factory.activitiesFallbackData;
     });
   };

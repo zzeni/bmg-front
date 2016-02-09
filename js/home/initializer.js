@@ -1,4 +1,4 @@
-bmg.factory('initializer', [function () {
+bmg.factory('initializer', ['$log', function ($log) {
   "use strict";
 
   var factory, slideShow, showMoto, fitIntro, updateCanvas, flowControlError,
@@ -20,7 +20,7 @@ bmg.factory('initializer', [function () {
 
     var imgPrependObj = document.getElementById('imgPrepend')
     if (typeof(imgPrependObj) === "object" && imgPrependObj != null) {
-      console.log("Background " + bgImgId + " prepended..");
+      $log.debug("Background " + bgImgId + " prepended..");
       imgPrependObj.className = 'intro-bg-' + bgImgId;
     }
   };
@@ -43,9 +43,9 @@ bmg.factory('initializer', [function () {
         counter++;
       } catch (error) {
         if (error.isFlowControl) {
-          console.log(error.message);
+          $log.debug(error.message);
         } else {
-          console.error(error);
+          $log.error(error);
         }
         return stopDrawing();
       }
@@ -136,7 +136,7 @@ bmg.factory('initializer', [function () {
   factory = {
     initializeIntro: function initialize() {
 
-      console.log("initializing intro..");
+      $log.debug("initializing intro..");
 
       //      $(window).scrollTop(0);
 

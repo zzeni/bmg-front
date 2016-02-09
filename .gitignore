@@ -1,4 +1,5 @@
 **/.DS_Store
+js/config.js
 vendor/bower_components/*
 vendor/node_modules/*
 node_modules/*
