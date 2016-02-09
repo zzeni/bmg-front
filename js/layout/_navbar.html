@@ -7,8 +7,8 @@
       <ul class="nav navbar-nav">
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"><a href="#page-top">#page-top</a></li>
-        <li><a href="/users/sign_in">{{ 'layout.nav.login' | translate }}</a></li>
-        <li><a href="/users/sign_up">{{ 'layout.nav.signup' | translate }}</a></li>
+        <li><a href="/users/sign_in">{{ scoped('layout.nav','login') | translate }}</a></li>
+        <li><a href="/users/sign_up">{{ scoped('layout.nav','signup') | translate }}</a></li>
         <li class="hidden-xs">
           <a aria-expanded="false" aria-haspopup="true" class="logo dropdown-toggle" data-toggle="dropdown" href="#" role="button">
             <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="200 160 295 450" height="25" width="20" xml:space="preserve" version="1.1" id="svg2">
@@ -29,13 +29,13 @@
               </g>
             </svg>
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">our story</a></li>
-            <li><a href="#">team</a></li>
-            <li><a href="#">terms and conditions</a></li>
-            <li><a href="#">FAQ</a></li>
+          <ul class="dropdown-menu" ng-init="ts='layout.nav.more'">
+            <li><a href="#">{{ scoped(ts,'our_story') | translate }}</a></li>
+            <li><a href="#">{{ scoped(ts,'team') | translate }}</a></li>
+            <li><a href="#">{{ scoped(ts,'terms_and_conditions') | translate }}</a></li>
+            <li><a href="#">{{ scoped(ts,'faq') | translate }}</a></li>
             <li class="divider" role="separator"></li>
-            <li><a href="#">contact us</a></li>
+            <li><a href="#">{{ scoped(ts,'contact_us') | translate }}</a></li>
           </ul>
         </li>
       </ul>

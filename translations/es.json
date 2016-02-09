@@ -1,7 +1,7 @@
 {
   "home": {
     "intro": {
-      "INTRO_CAPTION": "Encuentra<span>tu</span><br><span>gia</span>de aventura",
+      "INTRO_CAPTION": "Encuentra <span>tu</span><br><span>gia de</span> aventuras",
       "INTRO_TEXT": "Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.",
       "MOTO": "\"Life is meant for good friends and great adventures\""
     }
@@ -10,7 +10,14 @@
     "nav": {
       "signup": "Iniciar sesión",
       "login": "Registrarse",
-      "logout": "Cerrar sesión"
+      "logout": "Cerrar sesión",
+      "more": {
+        "our_story": "our story",
+        "team": "team",
+        "terms_and_conditions": "terms and conditions",
+        "faq": "FAQ",
+        "contact_us": "contact us"
+      }
     }
   },
   "utils": {

@@ -605,17 +605,18 @@ section.info-boxes .focused:hover .front {
 #languageSelect ul.dropdown-menu li {
   display: inline-block;
 }
-#languageSelect ul.dropdown-menu li a {
+#languageSelect ul.dropdown-menu li a,
+#languageSelect ul.dropdown-menu li a:focus,
+#languageSelect ul.dropdown-menu li a:visited {
   color: white;
 }
-#languageSelect ul.dropdown-menu li a:hover,
 #languageSelect ul.dropdown-menu li a:focus,
 #languageSelect ul.dropdown-menu li a:visited {
-  color: #46b8da;
+  background-color: #46b8da;
 }
-#languageSelect ul.dropdown-menu li a:focus,
-#languageSelect ul.dropdown-menu li a:visited {
-  background: transparent;
+#languageSelect ul.dropdown-menu li a:hover {
+  color: #46b8da;
+  background-color: #fafafa;
 }
 
 .btn-transparrent,

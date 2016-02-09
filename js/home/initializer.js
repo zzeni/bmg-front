@@ -20,7 +20,7 @@ bmg.factory('initializer', [function () {
 
     var imgPrependObj = document.getElementById('imgPrepend')
     if (typeof(imgPrependObj) === "object" && imgPrependObj != null) {
-      console.log(bgImgId + " prepended..");
+      console.log("Background " + bgImgId + " prepended..");
       imgPrependObj.className = 'intro-bg-' + bgImgId;
     }
   };
