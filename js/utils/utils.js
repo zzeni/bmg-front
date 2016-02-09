@@ -1,4 +1,4 @@
-bmg.factory('utils', ['$translate', 'api', 'LANGUAGE_KEYS', function ($translate, api, LANGUAGE_KEYS) {
+bmg.factory('utils', ['$translate', 'api', 'config', function ($translate, api, config) {
   "use strict";
 
   var factory = {};
@@ -46,7 +46,7 @@ bmg.factory('utils', ['$translate', 'api', 'LANGUAGE_KEYS', function ($translate
   };
 
   factory.getLanguages = function getLanguages() {
-    return LANGUAGE_KEYS;
+    return config.LANGUAGE_KEYS;
   };
 
   factory.changeLanguage = function changeLanguage(langKey) {

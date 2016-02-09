@@ -1,10 +1,12 @@
 var bmg = angular.module('bmg', ['pascalprecht.translate', 'ngCookies', 'apiService', 'config']);
 
-bmg.config(['$translateProvider', 'LANGUAGE_KEYS', function ($translateProvider, LANGUAGE_KEYS) {
+bmg.config(['$logProvider', '$translateProvider', 'config', function ($logProvider, $translateProvider, config) {
   "use strict";
 
+  $logProvider.debugEnabled(config.debug);
+
   $translateProvider
-    .registerAvailableLanguageKeys(LANGUAGE_KEYS, {
+    .registerAvailableLanguageKeys(config.LANGUAGE_KEYS, {
       'en_US': 'en',
       'en_UK': 'en'
     })
