@@ -4,6 +4,21 @@
       "INTRO_CAPTION": "Find<span>your</span><br><span>adventure</span>guide",
       "INTRO_TEXT": "Turn your journey into a great adventure! Just choose your desired activity and destination, and we'll help you find the perfect guide for it.",
       "MOTO": "\"Life is meant for good friends and great adventures\""
+    },
+    "whybemyguide": {
+      "HEADING": "Why BE MY GUIDE",
+      "article1": {
+        "title": "BeSafe. BeWise. BeMyGuide",
+        "body": "support only certified, verified and handpicked local adventure guides and be in safe hands"
+      },
+      "article2": {
+        "title": "Real people with Real passions",
+        "body": "find like-minded guides with diverse personal interests and enjoy the human element of your adventures"
+      },
+      "article3": {
+        "title": "Personalized experiences",
+        "body": "tailor your next adventure together with your guide and be flexible while traveling all around the globe"
+      }
     }
   },
   "layout": {
