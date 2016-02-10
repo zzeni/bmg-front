@@ -10,6 +10,13 @@
     margin: 1em 0 !important;
   }
 }
+
+@media screen and (min-width: 622px) and (max-width: 767px) {
+  #whybemyguide article .image-container {
+    width: 50%;
+  }
+}
+
 /*
     @media: xs
 */
@@ -726,6 +733,7 @@ section.info-boxes .focused:hover .front {
 
 #whybemyguide article .image-container {
   padding: 3em 1em;
+  margin: auto;
 }
 
 #whybemyguide article img {
