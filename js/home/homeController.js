@@ -1,4 +1,4 @@
-bmg.controller('homeController', ['$scope', 'initializer', 'utils', '$http', function ($scope, initializer, utils, $http) {
+bmg.controller('homeController', ['$scope', 'initializer', 'utils', function ($scope, initializer, utils) {
 
   $scope.activities = [];
 
@@ -9,12 +9,4 @@ bmg.controller('homeController', ['$scope', 'initializer', 'utils', '$http', fun
   $scope.initializeHowItWorks = initializer.initializeHowItWorks;
   $scope.pickActivity = initializer.pickActivity;
   $scope.initializePageScrollers = initializer.initializePageScrollers;
-
-  $scope.getCurrentLanguage = utils.getCurrentLanguage;
-  $scope.getLanguages = utils.getLanguages;
-  $scope.changeLanguage = utils.changeLanguage;
-
-  $scope.scoped = function scoped(translScope, translKey) {
-    return (translScope) ? translScope + '.' + translKey : translKey;
-  };
 }]);
