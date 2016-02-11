@@ -91,16 +91,13 @@ bmg.factory('initializer', ['$log', function ($log) {
     search = $('#search');
     var introObj = document.getElementById('introCanvas');
     intro_height = introObj.height;
-    searchOutlineTop = Number(search.css('outline-width').match(/^(\d+)\D/)[1]);
-    serach_height = search.outerHeight() + 2 * searchOutlineTop;
+    serach_height = search.outerHeight();
     if (windowObj.outerWidth() > 767) {
       proposed_offset = (intro_height - serach_height) / 3;
     } else {
       proposed_offset = (intro_height - serach_height) / 2;
     }
-    return search.offset({
-      top: proposed_offset + searchOutlineTop
-    });
+    search.css('top', proposed_offset);
   };
 
   sumElementsWidth = function (elArray) {
@@ -134,11 +131,14 @@ bmg.factory('initializer', ['$log', function ($log) {
   };
 
   factory = {
+    initializePageScrollers: function initializePageScrollers() {
+      setTimeout(function() { $('.page-scroller').removeClass('hidden-cs'); }, 3000);
+      setTimeout(function() { $('.page-scroller .faa-pulse').removeClass('faa-pulse'); }, 10000);
+    },
+
     initializeIntro: function initialize() {
 
       $log.debug("initializing intro..");
-
-      //      $(window).scrollTop(0);
 
       var canvas = document.getElementById('introCanvas');
 
@@ -188,6 +188,18 @@ bmg.factory('initializer', ['$log', function ($log) {
           $('.activity-dropdown-2.caret .fa').removeClass('fa-chevron-down').addClass('fa-chevron-up');
         }
         if ($('.activity-dropdown-menu-2').hasClass('open')) fitActivityDropdown2();
+      });
+
+      $(windowObj).click(function(event) {
+        var target = $(event.target);
+        if (!target.hasClass('activity-dropdown-1') && !target.parent().hasClass('activity-dropdown-1')) {
+          $('.activity-dropdown-menu-1').removeClass('open');
+          $('.activity-dropdown-1.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        }
+        if (!target.hasClass('activity-dropdown-2') && !target.parent().hasClass('activity-dropdown-2')) {
+          $('.activity-dropdown-menu-2').removeClass('open');
+          $('.activity-dropdown-2.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        }
       });
     },
 

@@ -8,6 +8,7 @@ bmg.controller('homeController', ['$scope', 'initializer', 'utils', '$http', fun
   $scope.initializeSearch = initializer.initializeSearch;
   $scope.initializeHowItWorks = initializer.initializeHowItWorks;
   $scope.pickActivity = initializer.pickActivity;
+  $scope.initializePageScrollers = initializer.initializePageScrollers;
 
   $scope.getCurrentLanguage = utils.getCurrentLanguage;
   $scope.getLanguages = utils.getLanguages;

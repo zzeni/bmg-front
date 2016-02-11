@@ -1,4 +1,36 @@
 /*
+@screen-xxxs-max: 479px;
+@screen-xxs-max: 622px;
+@screen-xxs-min: 623px;
+@screen-xxl-min: 1440px;
+*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+/*
     @media: xxs
 */
 @media screen and (max-width: 622px) {
@@ -11,7 +43,7 @@
   }
 }
 
-@media screen and (min-width: 622px) and (max-width: 767px) {
+@media screen and (min-width: 623px) and (max-width: 767px) {
   #whybemyguide article .image-container {
     width: 50%;
     margin: auto;
@@ -336,16 +368,19 @@ section#second-intro {
   font-size: 18px;
 }
 */
-#serach {
+#search {
+  padding: 0 15px;
   position: absolute;
   top: 130px;
+  width: 100%;
 }
 
 #searchBox {
+  width: 800px;
+  margin: auto;
   color: #fafafa;
-  padding: 10px 0;
+  padding: 70px 60px;
   background: rgba(0, 0, 0, 0.5);
-  outline: 60px solid rgba(0, 0, 0, 0.5);
   opacity: 0.9;
   -webkit-transition: opacity 0.6s;
   -moz-transition: opacity 0.6s;
@@ -529,6 +564,7 @@ section.info-boxes .focused:hover .front {
 */
 @media screen and (max-width: 991px) {
   #searchBox {
+    width: 100% !important;
     outline-width: 30px;
   }
   #searchBox h1 {
@@ -573,6 +609,32 @@ section.info-boxes .focused:hover .front {
   #small-screen-bg img {
     width: 480px;
   }
+}
+
+.page-scroller.hidden-cs {
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.page-scroller {
+  opacity: 1;
+  padding: 10px 0;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+  -webkit-transition: all 3s ease-in-out;
+  -moz-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+
+.page-scroller .btn {
+  opacity: 0.6;
+}
+
+.page-scroller .btn:hover {
+  opacity: 1;
 }
 
 #introCanvas {
@@ -712,11 +774,12 @@ section.info-boxes .focused:hover .front {
 
 #whybemyguide {
   background-color: #46b8da;
-  padding: 100px 50px;
+  padding: 50px;
   margin-top: 100px;
 }
 
 #whybemyguide .heading {
+  padding: 1em 0;
   color: #313131;
   text-align: center;
   margin: auto;

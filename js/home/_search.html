@@ -14,7 +14,7 @@
 
 <section id="search">
   <div class="row">
-    <div id="searchBox" class="text-center col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div id="searchBox" class="text-center">
       <div class="row">
         <h1 translate="home.intro.INTRO_CAPTION"></h1>
         <p><em>{{ "home.intro.INTRO_TEXT" | translate }}</em></p>
@@ -57,4 +57,5 @@
       </div>
     </div>
   </div>
+  <ng-include src="'js/utils/_page_scroller.html'" data-ng-init="scrollToId='whybemyguide'; scrollToOffset=-50"></ng-include>
 </section>

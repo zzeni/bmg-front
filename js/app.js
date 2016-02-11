@@ -1,4 +1,4 @@
-var bmg = angular.module('bmg', ['pascalprecht.translate', 'ngCookies', 'apiService', 'config']);
+var bmg = angular.module('bmg', ['pascalprecht.translate', 'ngCookies', 'apiService', 'config', 'smoothScroll']);
 
 bmg.config(['$logProvider', '$translateProvider', 'config', function ($logProvider, $translateProvider, config) {
   "use strict";

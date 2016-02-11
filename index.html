@@ -32,15 +32,18 @@
   <link rel="stylesheet" media="all" href="vendor/css/slippry.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="css/style.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="css/new_style.css" data-turbolinks-track="true">
-  <link href='https://fonts.googleapis.com/css?family=Caveat:400,700' rel='stylesheet' type='text/css'>
+<!--  <link rel='styl esheet' type='text/css' href='https://fonts.googleapis.com/css?family=Caveat:400,700'>-->
   <!--  <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Dancing+Script:400,700|Marck+Script|Kalam:400,300,700|Reenie+Beanie|Caveat:400,700' rel='stylesheet' type='text/css'>-->
   <!--  <link rel="stylesheet" id="options_typography_Pacifico-css" href="//fonts.googleapis.com/css?family=Pacifico&amp;subset=latin" type="text/css" media="all">-->
+  <link rel="stylesheet" href="vendor/bower_components/font-awesome-animation/dist/font-awesome-animation.min.css">
+
   <script src="vendor/bower_components/angular/angular.min.js"></script>
   <script src="vendor/bower_components/angular-cookies/angular-cookies.min.js"></script>
   <script src="vendor/bower_components/angular-translate/angular-translate.min.js"></script>
   <script src="vendor/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
   <script src="vendor/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
   <script src="vendor/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="vendor/bower_components/ngSmoothScroll/lib/angular-smooth-scroll.js"></script>
   <script src="js/config.js"></script>
   <script src="js/api.js"></script>
   <script src="js/app.js"></script>
@@ -50,13 +53,15 @@
 </head>
 
 <body data-ng-app="bmg" data-ng-controller="homeController">
+  <div id="top"></div>
 
-  <ng-include src="'js/layout/_navbar.html'"></ng-include>
+  <ng-include src="'js/layout/_navbar.html'" onload="initializePageScrollers()"></ng-include>
 
   <div id="notice"></div>
 
   <ng-include src="'js/utils/_lang_select.html'"></ng-include>
-  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()" autoscroll="true"></ng-include>
+  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()"></ng-include>
+<!--  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()" autoscroll="true"></ng-include>-->
   <ng-include src="'js/home/_search.html'" onload="initializeSearch()"></ng-include>
   <ng-include src="'js/home/_activities_section.html'"></ng-include>
   <ng-include src="'js/home/_whybemyguide_section.html'"></ng-include>

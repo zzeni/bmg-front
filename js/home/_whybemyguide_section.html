@@ -11,4 +11,7 @@
       <p class="body">{{ 'home.whybemyguide.article' + index + '.body' | translate }}</p>
     </article>
   </div>
+
+  <ng-include src="'js/utils/_page_scroller.html'" data-ng-init="scrollToId='top';scrollUp=true"></ng-include>
+
 </section>
