@@ -29,7 +29,8 @@ module.exports = function(grunt) {
         constants: {
           config: {
             ENV: 'development',
-            API_ENDPOINT_URL: 'http://api.bemyguide-dev.com:3000'
+            API_ENDPOINT_URL: 'http://api.bemyguide-dev.com:3000',
+            debug: true
           }
         }
       },
