@@ -32,6 +32,11 @@ bmg.config([
         url: '/home',
         templateUrl: '/home.html',
         controller: 'homeController'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: '/login.html',
+        controller: 'layoutController'
       });
 
     $urlRouterProvider.otherwise('home');
