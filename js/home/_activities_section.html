@@ -1,1 +1,20 @@
-<section class="hidden" id="activities"></section>
+<section id="activities">
+  <div class="heading">
+    <h1 translate="home.activities.HEADING"></h1>
+    <p class="caption" translate="home.activities.CAPTION"></p>
+  </div>
+  <div class="content">
+    <div class="activity-1 flying-div">
+      <img src="/img/home/activities-mask-shadow.png" class="mask mask-bottom-right">
+    </div>
+    <div class="activity-3 flying-div">
+      <img src="/img/home/activities-mask-shadow.png" class="mask mask-top-left">
+      <img src="/img/home/activities-mask-shadow.png" class="mask mask-bottom-left">
+    </div>
+
+    <div class="activity-2 flying-div">
+      <img src="/img/home/activities-mask-shadow.png" class="mask mask-top-right">
+    </div>
+  </div>
+  <ng-include src="'js/utils/_page_scroller.html'" data-ng-init="scrollToId='whybemyguide'; scrollToOffset=-50"></ng-include>
+</section>

@@ -1,0 +1,454 @@
+/*
+    @media: xxxs
+*/
+@media screen and (max-width: 622px) {
+  section.info-boxes .focused {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (min-width: 623px) and (max-width: 767px) {
+  #whybemyguide article .image-container {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+/*
+    @media: xs
+*/
+@media screen and (max-width: 767px) {
+  section.info-boxes .first,
+  section.info-boxes .second,
+  section.info-boxes .third,
+  section.info-boxes .fourth {
+    left: 0 !important;
+    -webkit-transition: opacity 1.2s !important;
+    -moz-transition: opacity 1.2s !important;
+    transition: opacity 1.2s !important;
+  }
+}
+
+/* =======================================
+1. Section: Intro
+======================================== */
+
+#intro {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+#small-screen-bg {
+  margin: 0;
+  padding: 0;
+}
+#small-screen-bg img {
+  width: 100%;
+}
+#introCanvas {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-transition: background-image 4s ease-in-out;
+  -moz-transition: background-image 4s ease-in-out;
+  transition: background-image 4s ease-in-out;
+  z-index: -1;
+}
+
+.loading-bg {
+  background-image: url('/img/baloon-blue-loading-rotate.gif');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.intro-bg-1 {
+  background-image: url('/img/intro/1.jpg');
+}
+
+.intro-bg-2 {
+  background-image: url('/img/intro/2.jpg');
+}
+
+.intro-bg-3 {
+  background-image: url('/img/intro/3.jpg');
+}
+
+.intro-bg-4 {
+  background-image: url('/img/intro/4.jpg');
+}
+
+.intro-bg-5 {
+  background-image: url('/img/intro/5.jpg');
+}
+
+#imgPrepend {
+  width: 1px !important;
+  height: 1px !important;
+  position: absolute;
+  z-index: -99;
+}
+
+#moto {
+  text-align: center;
+  margin: 0 0 2em 0;
+}
+#moto h2 {
+  font-family: cursive;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Marck Script', cursive;
+  font-family: 'Caveat', cursive;
+  color: #fafafa;
+  font-size: 1.6em;
+  text-align: center;
+  text-transform: none;
+  position: relative;
+  bottom: 6em;
+  opacity: 0;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  transition: all 2s;
+}
+#moto h2.focused {
+  color: #37353b;
+  opacity: 1;
+  bottom: 4em;
+}
+
+/* =======================================
+2. Section: Search
+======================================== */
+
+#search {
+  padding: 0 15px;
+  position: absolute;
+  top: 130px;
+  width: 100%;
+}
+
+#searchBox {
+  width: 800px;
+  margin: auto;
+  color: #fafafa;
+  padding: 70px 60px;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+#searchBox:hover,
+#searchBox.hover {
+  opacity: 1;
+}
+#searchBox h5 {
+  text-transform: lowercase;
+  margin-bottom: 4em;
+}
+#searchBox h5,
+#searchBox p {
+  padding: 0 10px;
+  margin-bottom: 3em;
+}
+#searchBox h1 {
+  font-size: 5.5rem;
+}
+#searchBox .form-inline .input-group {
+  margin: 0 auto;
+}
+#searchBox .form-inline .input-group input[type=text] {
+  border-left: 0px;
+  border-right: 0px;
+  padding-left: 0px;
+}
+#searchBox .form-inline .input-group .input-group-addon {
+  border-right: 0;
+}
+#searchBox .form-inline .input-group .caret {
+  border-left: 0;
+}
+#searchBox .fa {
+  color: #46b8da;
+}
+#searchBox .hidden-xs input {
+  width: auto;
+}
+#searchBox .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.activity-dropdown-menu-1,
+.activity-dropdown-menu-2 {
+  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.activity-dropdown-menu-1.open,
+.activity-dropdown-menu-2.open {
+  display: block;
+}
+.activity-dropdown-menu-1 li,
+.activity-dropdown-menu-2 li {
+/*  padding-left: 2em;*/
+}
+.activity-ajax-loader {
+  padding: 2em 0 4em 0;
+  text-align: center;
+  -webkit-transition: all 1.2s ease;
+  -moz-transition: all 1.2s ease;
+  transition: all 1.2s ease;
+}
+.activity-ajax-loader img {
+  width: 5em;
+/*  margin: 0 auto;*/
+}
+/*
+    @media: sm
+*/
+@media screen and (max-width: 991px) {
+  #searchBox {
+    width: 100% !important;
+    outline-width: 30px;
+  }
+  #searchBox h1 {
+    font-size: 5rem;
+  }
+}
+/*
+    @media: xs
+*/
+@media screen and (max-width: 767px) {
+  #searchBox {
+    outline-width: 0px;
+    padding: 60px 30px;
+  }
+  #searchBox h1 {
+    font-size: 4.5rem;
+  }
+  #searchBox input {
+    border-left: 0;
+  }
+  #moto h2.focused {
+    bottom: 5em;
+  }
+}
+@media screen and (max-width: 479px) {
+  #searchBox {
+    padding: 30px 20px;
+  }
+  #searchBox form.hidden-xs-up {
+    width: 100%;
+    margin-left: 0;
+  }
+  #searchBox h1 {
+    font-size: 4rem;
+  }
+  #searchBox h1 span:last-child {
+    display: block;
+  }
+  #searchBox p {
+    display: none;
+  }
+  #small-screen-bg {
+    overflow: hidden;
+  }
+  #small-screen-bg img {
+    width: 480px;
+  }
+}
+
+/* =======================================
+3. Section: Activities
+======================================== */
+
+#activities {
+  background-color: #313131;
+  padding: 50px 0;
+  margin-top: 100px;
+}
+
+#activities .bg,
+#activities .bg img
+{
+  width: 100%;
+}
+
+#activities .heading {
+  padding: 1em 0 2em 0;
+  color: #fafafa;
+  text-align: center;
+  margin: auto;
+}
+#activities .heading .just-img {
+  height: 0.8em;
+}
+#activities .heading .caption {
+  font-style: italic;
+}
+
+#activities .flying-div {
+  margin: 0;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+#activities .flying-div .mask {
+  position: absolute;
+  width: 100%;
+  height: 15%;
+}
+#activities .flying-div .mask-bottom-right {
+  bottom: 0px;
+}
+#activities .flying-div .mask-bottom-left {
+  bottom: 0px;
+  transform: rotateY(180deg);
+}
+#activities .flying-div .mask-top-right {
+  top: 0px;
+  transform: rotateX(180deg);
+}
+#activities .flying-div .mask-top-left {
+  top: 0px;
+  transform: rotateY(180deg) rotateX(180deg);
+}
+#activities .content {
+  box-shadow: 0 0 5px 5px black;
+}
+
+#activities .activity-1 {
+  background-image: url('/img/home/activities-1.jpg');
+}
+#activities .activity-2 {
+  background-image: url('/img/home/activities-2.jpg');
+}
+#activities .activity-3 {
+  background-image: url('/img/home/activities-3.jpg');
+}
+
+/* =======================================
+4. Section: How It Works
+======================================== */
+
+#whybemyguide {
+  background-color: #46b8da;
+  padding: 50px;
+  margin-top: 100px;
+}
+
+#whybemyguide .heading {
+  padding: 1em 0;
+  color: #313131;
+  text-align: center;
+  margin: auto;
+}
+
+#whybemyguide article .body {
+  text-align: justify;
+}
+
+#whybemyguide article .title {
+  color: #fafafa;
+  text-transform: none;
+  font-weight: bold;
+}
+
+#whybemyguide article .image-container {
+  padding: 3em 1em;
+}
+
+#whybemyguide article img {
+  border: 1em solid rgba(70,184,218,0.3);
+  border-radius: 100%;
+  margin: auto;
+  background: rgba(255,255,255,0.7);
+}
+
+/* =======================================
+5. Section: How It Works
+======================================== */
+
+section#how-it-works {
+  margin-top: 6em;
+}
+.info-boxes {
+  padding: 2em 0;
+  position: relative;
+}
+.info-boxes .first,
+.info-boxes .second {
+  left: -4em;
+  opacity: 0;
+  -webkit-transition: opacity 1.5s, left 1.5s;
+  -moz-transition: opacity 1.5s, left 1.5s;
+  transition: opacity 1.5s, left 1.5s;
+}
+.info-boxes .third,
+.info-boxes .fourth {
+  left: 4em;
+  opacity: 0;
+  -webkit-transition: opacity 1.5s, left 1.5s;
+  -moz-transition: opacity 1.5s, left 1.5s;
+  transition: opacity 1.5s, left 1.5s;
+}
+.info-boxes .focused {
+  left: 0;
+  opacity: 1;
+}
+.info-boxes a {
+  margin: 1.5em 0;
+}
+.info-boxes .focused:hover h3,
+.info-boxes h3.hover {
+  color: #5ba0d0;
+}
+.info-boxes .focused {
+  perspective: 900px;
+}
+.rotated {
+  transform-style: preserve-3d;
+}
+.rotated .front,
+.rotated .back {
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  transform-origin: 50% 0%;
+  background-color: transparent;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.rotated .back {
+  transform: translate3d(0, 0, -1.2em) rotate3d(1, 0, 0, 90deg);
+  position: relative;
+  bottom: 1em;
+  opacity: 0;
+  margin: 0;
+}
+section.info-boxes .focused:hover .back {
+  transform: rotate3d(1, 0, 0, 0deg);
+  opacity: 1;
+}
+section.info-boxes .focused:hover .front {
+  transform: translate3d(0, 1.4em, 0) rotate3d(1, 0, 0, -90deg);
+  opacity: 0;
+}

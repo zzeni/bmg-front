@@ -19,6 +19,12 @@
         "title": "Personalized experiences",
         "body": "tailor your next adventure together with your guide and be flexible while traveling all around the globe"
       }
+    },
+    "activities": {
+      "HEADING1": "<span>No limits:</span> Be<span>!</span>Active",
+      "HEADING2": "No limits: <span>Be</span>!<span>Active</span>",
+      "HEADING": "No!<span>limits</span><img class='just-img' src='/img/home/activities-text-just.png'>Be!<span>Active</span>",
+      "CAPTION": "Just choose the activity of your taste and we'll do the rest :)"
     }
   },
   "layout": {
