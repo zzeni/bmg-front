@@ -4,17 +4,25 @@
     <p class="caption" translate="home.activities.CAPTION"></p>
   </div>
   <div class="content">
-    <div class="activity-1 flying-div">
-      <img src="/img/home/activities-mask-shadow.png" class="mask mask-bottom-right">
-    </div>
-    <div class="activity-3 flying-div">
-      <img src="/img/home/activities-mask-shadow.png" class="mask mask-top-left">
-      <img src="/img/home/activities-mask-shadow.png" class="mask mask-bottom-left">
-    </div>
-
-    <div class="activity-2 flying-div">
-      <img src="/img/home/activities-mask-shadow.png" class="mask mask-top-right">
-    </div>
+    <a href="#/search?activity-class=water">
+      <div class="activity-water flying-div">
+        <h2>water</h2>
+        <img src="/img/home/activities-mask-shadow.png" class="mask mask-bottom-right">
+      </div>
+    </a>
+    <a href="#/search?activity-class=air">
+      <div class="activity-air flying-div">
+        <h2 class="text-right">air</h2>
+        <img src="/img/home/activities-mask-shadow.png" class="mask mask-top-left">
+        <img src="/img/home/activities-mask-shadow.png" class="mask mask-bottom-left">
+      </div>
+    </a>
+    <a href="#/search?activity-class=land">
+      <div class="activity-land flying-div">
+        <h2>land</h2>
+        <img src="/img/home/activities-mask-shadow.png" class="mask mask-top-right">
+      </div>
+    </a>
   </div>
   <ng-include src="'js/utils/_page_scroller.html'" data-ng-init="scrollToId='whybemyguide'; scrollToOffset=-50"></ng-include>
 </section>

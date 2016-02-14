@@ -24,7 +24,28 @@
       "HEADING1": "<span>No limits:</span> Be<span>!</span>Active",
       "HEADING2": "No limits: <span>Be</span>!<span>Active</span>",
       "HEADING": "No!<span>limits</span><img class='just-img' src='/img/home/activities-text-just.png'>Be!<span>Active</span>",
-      "CAPTION": "Just choose the activity of your taste and we'll do the rest :)"
+      "CAPTION": "Choose the activity of your taste to get started with our matchmaking service"
+    }
+  },
+  "devise": {
+    "login": {
+      "heading": "Log in",
+      "pass_forgotten": "forgot your password?",
+      "email": "email",
+      "password": "password",
+      "submit": "submit",
+      "go_back": "go back",
+      "fb_login": "log in with facebook"
+    },
+    "signup": {
+      "heading": "Sign up",
+      "email": "email",
+      "password": "password",
+      "confirm_password": "confirm password",
+      "submit": "submit",
+      "go_back": "go back",
+      "fb_signup": "sign up with facebook",
+      "didnt_receive_conf_email": "didn't receive confirmation email?"
     }
   },
   "layout": {

@@ -32,7 +32,7 @@
   <link rel="stylesheet" media="all" href="vendor/css/slippry.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="css/style.css" data-turbolinks-track="true">
   <link rel="stylesheet" media="all" href="css/home.css" data-turbolinks-track="true">
-  <link rel="stylesheet" media="all" href="css/login.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="css/devise.css" data-turbolinks-track="true">
   <!--  <link rel='styl esheet' type='text/css' href='https://fonts.googleapis.com/css?family=Caveat:400,700'>-->
   <!--  <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Dancing+Script:400,700|Marck+Script|Kalam:400,300,700|Reenie+Beanie|Caveat:400,700' rel='stylesheet' type='text/css'>-->
   <!--  <link rel="stylesheet" id="options_typography_Pacifico-css" href="//fonts.googleapis.com/css?family=Pacifico&amp;subset=latin" type="text/css" media="all">-->
@@ -58,8 +58,9 @@
 <body data-ng-app="bmg">
   <div id="top"></div>
 
-
   <ui-view></ui-view>
+
+  <ng-include src="'js/layout/_footer.html'"></ng-include>
 
   <script type="text/ng-template" id="/home.html">
     <ng-include src="'js/layout/_navbar.html'" data-ng-controller="layoutController"></ng-include>
@@ -77,32 +78,12 @@
   </script>
 
   <script type="text/ng-template" id="/login.html">
-    <section id="login">
-      <div class="container">
-        <form method="post" action="">
-          <div class="first_line">
-            <p>Log in</p>
-          </div>
-          <div class="fields">
-            <!--            <label for="email">EMAIL</label>-->
-            <input name="email" type="text" placeholder="Email">
-            <!--            <label for="password">PASSWORD</label>-->
-            <input name="password" type="password" placeholder="Password">
-          </div>
-          <p class="forgot_pass">Forgot password?</p>
-
-          <input class="submit" type="submit" value="Log in">
-          <input class="fb_button" type="submit" value="Log in with facebook">
-
-          <p class="text-center">
-            <a class="small" href="#/home">go back</a>
-          </p>
-        </form>
-      </div>
-    </section>
+    <ng-include src="'js/devise/_login.html'"></ng-include>
   </script>
 
-  <ng-include src="'js/layout/_footer.html'"></ng-include>
+  <script type="text/ng-template" id="/signup.html">
+    <ng-include src="'js/devise/_signup.html'"></ng-include>
+  </script>
 
   <script src="vendor/js/jquery.js" data-turbolinks-track="true"></script>
   <script src="vendor/js/jquery_ujs.js" data-turbolinks-track="true"></script>

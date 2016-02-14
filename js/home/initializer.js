@@ -1,6 +1,8 @@
 bmg.factory('initializer', ['$log', function ($log) {
   "use strict";
 
+  var INTRO_MIN_HEIGHT = 660;
+
   var factory, slideShow, showMoto, fitIntro, updateCanvas, flowControlError,
       fitSearch, fitActivityDropdown1, fitActivityDropdown2, sumElementsWidth;
 
@@ -27,7 +29,7 @@ bmg.factory('initializer', ['$log', function ($log) {
 
   fitIntro = function fitIntro(introObj) {
     introObj.width = windowObj.outerWidth();
-    introObj.height = Math.max(windowObj.outerHeight(), 680);
+    introObj.height = Math.max(windowObj.outerHeight(), INTRO_MIN_HEIGHT);
   };
 
   showMoto = function showMoto(canvas) {
@@ -63,7 +65,7 @@ bmg.factory('initializer', ['$log', function ($log) {
     height = canvas.height;
     middle = width / 2;
 
-    curveHeight = Math.min(160, height * 0.7);
+    curveHeight = Math.min(canvas.getAttribute('data-offset'), height * 0.7);
     step = canvas.getAttribute('data-drawing-step');
     offset = (width >= 992) ? 0 : (width < 768) ? step / 2 : step / 4;
 
@@ -225,77 +227,6 @@ bmg.factory('initializer', ['$log', function ($log) {
 
   return factory;
 }]);
-
-
-//  updateCanvas2 = function(offset) {
-//    var canvas, ctx, height, step, width;
-//    canvas = $('#canvas')[0];
-//    width = canvas.width;
-//    height = canvas.height;
-//    step = height - offset * 0.2;
-//    ctx = canvas.getContext("2d");
-//    ctx.clearRect(0, 0, width, height);
-//    ctx.beginPath();
-//    ctx.moveTo(0, step);
-//    ctx.bezierCurveTo(width * 0.33, step, width * 0.66, step, width, height - offset);
-//    ctx.lineTo(width, height);
-//    ctx.lineTo(0, height);
-//    ctx.fillStyle = "#fafafa";
-//    return ctx.fill();
-//  };
-
-//  updateCanvas1 = function(offset) {
-//    var canvas, ctx, height, middle, step, width;
-//    canvas = $('#canvas')[0];
-//    width = canvas.width;
-//    height = canvas.height;
-//    middle = width / 2;
-//    step = height - offset;
-//    ctx = canvas.getContext("2d");
-//    ctx.clearRect(0, 0, width, height);
-//    ctx.beginPath();
-//    ctx.moveTo(0, height);
-//    ctx.lineTo(width, height);
-//    ctx.lineTo(width, height - offset);
-//    ctx.lineTo(0, height);
-//    ctx.fillStyle = "#fafafa";
-//    return ctx.fill();
-//  };
-
-//  drawCanvas1 = function() {
-//    var canvas, ctx, height, middle, offset, step, width;
-//    width = $(window).outerWidth();
-//    height = width / 12;
-//    canvas = $('#canvas');
-//    if (canvas.length) {
-//      fitCanvas();
-//      canvas = canvas[0];
-//      height = canvas.height;
-//      width = canvas.width;
-//      offset = window.pageYOffset;
-//      if (offset >= 0 && offset < $(window).outerHeight()) {
-//        middle = width / 2;
-//        offset = Math.min(offset, height);
-//        step = height - offset;
-//        ctx = canvas.getContext("2d");
-//      }
-//      if (offset >= 0 && offset < $(window).outerHeight()) {
-//        middle = width / 2;
-//        offset = Math.min(offset, height);
-//        step = height - offset;
-//        ctx = canvas.getContext("2d");
-//        ctx.clearRect(0, 0, width, height);
-//        ctx.beginPath();
-//        ctx.moveTo(0, step);
-//        ctx.quadraticCurveTo(middle, height + offset, width, step);
-//        ctx.lineTo(width, height);
-//        ctx.lineTo(0, height);
-//        ctx.moveTo(0, step);
-//        ctx.fillStyle = "#fafafa";
-//        return ctx.fill();
-//      }
-//    }
-//  };
 
 //  showInfoBoxes = function() {
 //    var container, focusBoxes, max_height, offset;

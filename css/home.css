@@ -243,8 +243,11 @@
   #searchBox input {
     border-left: 0;
   }
+  #moto h2 {
+    bottom: 7em;
+  }
   #moto h2.focused {
-    bottom: 5em;
+    bottom: 6em;
   }
 }
 @media screen and (max-width: 479px) {
@@ -311,6 +314,13 @@
   background-position: center;
   background-size: cover;
 }
+#activities .flying-div h2 {
+  font-size: 50px;
+  margin: 0;
+  padding: 100px;
+  color: #fafafa;
+  text-shadow: #313131 0px 0px 10px;
+}
 #activities .flying-div .mask {
   position: absolute;
   width: 100%;
@@ -335,14 +345,14 @@
   box-shadow: 0 0 5px 5px black;
 }
 
-#activities .activity-1 {
-  background-image: url('/img/home/activities-1.jpg');
+#activities .activity-water {
+  background-image: url('/img/home/activities-water.jpg');
 }
-#activities .activity-2 {
-  background-image: url('/img/home/activities-2.jpg');
+#activities .activity-air {
+  background-image: url('/img/home/activities-air.jpg');
 }
-#activities .activity-3 {
-  background-image: url('/img/home/activities-3.jpg');
+#activities .activity-land {
+  background-image: url('/img/home/activities-land.jpg');
 }
 
 /* =======================================

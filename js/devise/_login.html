@@ -1,0 +1,22 @@
+<section id="login">
+  <div class="container">
+    <div class="row">
+      <form method="post" action="" class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <h3>{{ 'devise.login.heading' | translate }}</h3>
+        <fieldset>
+          <input name="email" type="text" placeholder="{{ 'devise.login.email' |translate }}">
+          <input name="password" type="password" placeholder="{{ 'devise.login.password' |translate }}">
+        </fieldset>
+
+        <a href="#/password_forgotten" class="help-link">{{ 'devise.login.pass_forgotten' | translate }}</a>
+
+        <button class="btn btn-primary" type="submit">
+          {{ 'devise.login.submit' | translate }}
+        </button>
+
+        <a href="#/fb-login" class="btn btn-default brand-fb">{{ 'devise.login.fb_login' | translate }}</a>
+        <a href="#/home" class="btn btn-default">{{ 'devise.login.go_back' | translate }}</a>
+      </form>
+    </div>
+  </div>
+</section>

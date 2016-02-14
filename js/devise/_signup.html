@@ -1,0 +1,25 @@
+<section id="signup">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <form method="post" action="">
+          <h3>{{ 'devise.signup.heading' | translate }}</h3>
+          <fieldset>
+            <input name="email" type="text" placeholder="{{ 'devise.signup.email' |translate }}">
+            <input name="password" type="password" placeholder="{{ 'devise.signup.password' |translate }}">
+            <input name="password_confirmation" type="password" placeholder="{{ 'devise.signup.confirm_password' |translate }}">
+          </fieldset>
+
+          <a href="#/password_forgotten" class="help-link">{{ 'devise.signup.didnt_receive_conf_email' | translate }}</a>
+
+          <button class="btn btn-primary" type="submit">
+            {{ 'devise.signup.submit' | translate }}
+          </button>
+
+          <a href="#/fb-signup" class="btn btn-default brand-fb">{{ 'devise.signup.fb_signup' | translate }}</a>
+          <a href="#/home" class="btn btn-default">{{ 'devise.signup.go_back' | translate }}</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
