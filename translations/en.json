@@ -35,6 +35,7 @@
       "password": "password",
       "submit": "submit",
       "go_back": "go back",
+      "goto_signup": "go to signup",
       "fb_login": "log in with facebook"
     },
     "signup": {
@@ -44,6 +45,7 @@
       "confirm_password": "confirm password",
       "submit": "submit",
       "go_back": "go back",
+      "goto_login": "go to login",
       "fb_signup": "sign up with facebook",
       "didnt_receive_conf_email": "didn't receive confirmation email?"
     }
