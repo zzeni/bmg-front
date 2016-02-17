@@ -30,7 +30,13 @@ bmg.factory('utils', ['$log', '$translate', 'api', 'config', function ($log, $tr
 
     api.get('/activities.json')
     .success(function(data) {
-      scope.activities = data;
+      scope.activities = [];
+      angular.forEach(data, function(el) {
+        $translate('utils.activities.' + el.translation_key).then(function (translation) {
+          el.name = translation;
+        });
+        scope.activities.push(el);
+      });
       $log.debug(scope.activities.length + ' activities obtained.');
     })
     .error(function (error) {
