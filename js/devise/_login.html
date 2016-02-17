@@ -8,7 +8,10 @@
           <input name="password" type="password" placeholder="{{ 'devise.login.password' |translate }}">
         </fieldset>
 
-        <a href="#/password_forgotten" class="help-link">{{ 'devise.login.pass_forgotten' | translate }}</a>
+        <div class="help-links">
+          <a href="#/password_forgotten" class="help-link">{{ 'devise.login.pass_forgotten' | translate }}</a>
+          <a href="#/signup" class="help-link">{{ 'devise.login.goto_signup' | translate }}</a>
+        </div>
 
         <button class="btn btn-primary" type="submit">
           {{ 'devise.login.submit' | translate }}

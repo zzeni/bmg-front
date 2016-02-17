@@ -1,8 +1,7 @@
 <section id="signup">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <form method="post" action="">
+        <form method="post" action="" class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
           <h3>{{ 'devise.signup.heading' | translate }}</h3>
           <fieldset>
             <input name="email" type="text" placeholder="{{ 'devise.signup.email' |translate }}">
@@ -10,7 +9,10 @@
             <input name="password_confirmation" type="password" placeholder="{{ 'devise.signup.confirm_password' |translate }}">
           </fieldset>
 
-          <a href="#/password_forgotten" class="help-link">{{ 'devise.signup.didnt_receive_conf_email' | translate }}</a>
+          <div class="help-links">
+            <a href="#/password_forgotten" class="help-link">{{ 'devise.signup.didnt_receive_conf_email' | translate }}</a>
+            <a href="#/login" class="help-link">{{ 'devise.signup.goto_login' | translate }}</a>
+          </div>
 
           <button class="btn btn-primary" type="submit">
             {{ 'devise.signup.submit' | translate }}
@@ -19,7 +21,6 @@
           <a href="#/fb-signup" class="btn btn-default brand-fb">{{ 'devise.signup.fb_signup' | translate }}</a>
           <a href="#/home" class="btn btn-default">{{ 'devise.signup.go_back' | translate }}</a>
         </form>
-      </div>
     </div>
   </div>
 </section>
