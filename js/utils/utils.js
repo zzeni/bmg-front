@@ -34,6 +34,7 @@ bmg.factory('utils', ['$log', '$translate', 'api', 'config', function ($log, $tr
       angular.forEach(data, function(el) {
         $translate('utils.activities.' + el.translation_key).then(function (translation) {
           el.name = translation;
+//          el.icon = '<img src="/img/icons/activities/' + el.icon_name + '" width="15px">';
         });
         scope.activities.push(el);
       });

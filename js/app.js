@@ -1,4 +1,12 @@
-var bmg = angular.module('bmg', ['ui.router', 'pascalprecht.translate', 'ngCookies', 'apiService', 'config', 'smoothScroll']);
+var bmg = angular.module('bmg', [
+  'ui.router',
+  'ui.multiselect',
+  'pascalprecht.translate',
+  'ngCookies',
+  'apiService',
+  'config',
+  'smoothScroll'
+]);
 
 bmg.config([
   '$logProvider',

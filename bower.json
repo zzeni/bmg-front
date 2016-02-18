@@ -33,6 +33,7 @@
     "angular-translate-loader-static-files": "^2.9.0",
     "angular-resource": "^1.4.9",
     "font-awesome-animation": "^0.0.8",
-    "ngSmoothScroll": "^2.0.0"
+    "ngSmoothScroll": "^2.0.0",
+    "angular-bootstrap-multiselect": "^0.3.5"
   }
 }

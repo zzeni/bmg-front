@@ -68,7 +68,8 @@
     "search": {
       "places": "places",
       "activities": "actions",
-      "search": "Search"
+      "search": "Search",
+      "selected": " selected"
     },
     "activities": {
       "biking": "biking",
