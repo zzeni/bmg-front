@@ -1,4 +1,4 @@
-<section id="activities">
+<section id="activities" data-ng-init="next=sections.activities.next">
   <div class="heading">
     <h1 translate="home.activities.HEADING"></h1>
     <p class="caption" translate="home.activities.CAPTION"></p>
@@ -24,5 +24,5 @@
       </div>
     </a>
   </div>
-  <ng-include src="'js/utils/_page_scroller.html'" data-ng-init="scrollToId='whybemyguide'; scrollToOffset=-50"></ng-include>
+  <div data-ng-if="next" data-ng-include="'js/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
 </section>

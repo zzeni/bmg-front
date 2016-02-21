@@ -50,6 +50,7 @@
   <script src="js/config.js"></script>
   <script src="js/api.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/filters.js"></script>
   <script src="js/utils/utils.js"></script>
   <script src="js/layout/layoutController.js"></script>
   <script src="js/home/initializer.js"></script>
@@ -71,11 +72,29 @@
     <ng-include src="'js/utils/_lang_select.html'" data-ng-controller="layoutController"></ng-include>
 
     <ng-include src="'js/home/_intro.html'" onload="initializeIntro(); initializePageScrollers()"></ng-include>
-    <!--  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()" autoscroll="true"></ng-include>-->
+    <!--  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()" autos croll="true"></ng-include>-->
     <ng-include src="'js/home/_search.html'" onload="initializeSearch()"></ng-include>
     <ng-include src="'js/home/_activities_section.html'"></ng-include>
     <ng-include src="'js/home/_whybemyguide_section.html'"></ng-include>
-    <ng-include src="'js/home/_howitworks_section.html'"></ng-include>
+    <ng-include src="'js/home/_blog_section.html'"></ng-include>
+    <ng-include src="'js/home/_howitworks_section.html'" class="last"></ng-include>
+  </script>
+
+  <script type="text/ng-template" id="/home_new.html">
+    <ng-include src="'js/layout/_navbar.html'" data-ng-controller="layoutController"></ng-include>
+
+    <div id="notice"></div>
+
+    <ng-include src="'js/utils/_lang_select.html'" data-ng-controller="layoutController"></ng-include>
+
+    <ng-include src="'js/home/_intro.html'" onload="initializeIntro(); initializePageScrollers()"></ng-include>
+    <!--  <ng-include src="'js/home/_intro.html'" onload="initializeIntro()" autos croll="true"></ng-include>-->
+    <ng-include src="'js/home/_search.html'" onload="initializeSearch()"></ng-include>
+    <ng-include src="'js/home/_activities_section.html'"></ng-include>
+    <ng-include src="'js/home/_whybemyguide_new_section.html'"></ng-include>
+    <ng-include src="'js/home/_blog_section.html'"></ng-include>
+    <ng-include src="'js/home/_howitworks_section.html'" class="last"></ng-include>
+    <ng-include src="'/_icons.html'"></ng-include>
   </script>
 
   <script type="text/ng-template" id="/login.html">
@@ -84,6 +103,15 @@
 
   <script type="text/ng-template" id="/signup.html">
     <ng-include src="'js/devise/_signup.html'"></ng-include>
+  </script>
+
+
+  <script type="text/ng-template" id="/_icons.html">
+    <div class="container activity-icons">
+      <div style="display: inline-block; padding: 10px;" ng-repeat="i in [] | range:24">
+        <div ng-include="'/img/icons/activities/' + (i+1) + '.svg'"></div>
+      </div>
+    </div>
   </script>
 
   <script src="vendor/js/jquery.js" data-turbolinks-track="true"></script>
@@ -103,12 +131,8 @@
   <!--  <script src="vendor/js/bootstrap/affix.js" data-turbolinks-track="true"></script>-->
   <script src="vendor/js/bootstrap.js" data-turbolinks-track="true"></script>
   <script src="vendor/js/slippry.js" data-turbolinks-track="true"></script>
-  <!--  <script src="js/ajax-setup.js" data-turbolinks-track="true"></script>-->
-  <!--  <script src="js/grayscale.js" data-turbolinks-track="true"></script>-->
-  <!--  <script src="js/signup-form.js" data-turbolinks-track="true"></script>-->
-  <!--  <script src="js/main.js" data-turbolinks-track="true"></script>-->
-  <!--  <script src="js/users.js" data-turbolinks-track="true"></script>-->
   <script src="vendor/bower_components/angular-bootstrap-multiselect/angular-bootstrap-multiselect.js"></script>
+  <script src="js/utils/_activities_dropdown_generator.js"></script>
 </body>
 
 </html>

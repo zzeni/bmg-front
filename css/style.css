@@ -383,3 +383,18 @@ a.navbar-brand .div-bg {
 #notice p {
   padding: 5px 10px 0 10px;
 }
+
+.activity-icon {
+  padding: 10px;
+  color: cadetblue;
+}
+
+.activity-icons {
+  margin-bottom: 150px;
+}
+
+.activity-icons svg {
+  width: 100px;
+  height: auto;
+  fill: cadetblue;
+}

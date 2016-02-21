@@ -41,6 +41,11 @@ bmg.config([
         templateUrl: '/home.html',
         controller: 'homeController'
       })
+      .state('home_new', {
+        url: '/home-v1',
+        templateUrl: '/home_new.html',
+        controller: 'homeController'
+      })
       .state('login', {
         url: '/login',
         templateUrl: '/login.html',

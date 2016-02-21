@@ -1,4 +1,4 @@
-<section id="search">
+<section id="search" data-ng-init="next=sections.search.next" >
   <div class="row">
     <div id="searchBox" class="text-center">
       <div class="row">
@@ -14,28 +14,21 @@
             <!-- <span class="input-group-addon"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
             <input type="text" class="form-control input-lg" placeholder="{{ 'utils.search.places' | translate }}" describedby="inpit-addon-location">
           </div>
-          <div class="input-group activity-select">
-            <!-- <span class="input-group-addon><i class="fa fa-location-arrow fa-2x"></i></span> -->
-            <span class="input-group-addon"><i class="fa fa-compass fa-2x"></i></span>
-            <!-- <span class="input-group-addon><i class="fa fa-cogs fa-2x"></i></span> -->
-            <multiselect
-              id="activityDropdown"
-              ng-model="selectedActivities"
-              options="a.name for a in activities"
-              change="selected()"
-              multiple="true"
-              template-url="/js/utils/_activities_dropdown.html"
-              class="form-control input-lg"
-              ng-class="(activities.length === 0) ? 'loading' : ''"
-              ms-header="{{ 'utils.search.activities' | translate }}"
-              scroll-after-rows="5"
-              data-compare-by="id"
-              filter-after-rows="5"
-              max-width="100"
-              tabindex="-1"
-            ></multiselect>
-            <span class="input-group-addon caret"><i class="fa fa-chevron-down"></i></span>
-          </div>
+
+          <multiselect
+
+            class="form-control input-lg"
+            ng-class="(activities.length === 0) ? 'loading' : ''"
+            id="activityDropdown"
+            ng-model="selectedActivities"
+            options="a.name for a in activities"
+            multiple="true"
+            ms-header="{{ 'utils.search.activities' | translate }}"
+            scroll-after-rows="6"
+            data-compare-by="id"
+            tabindex="-1"
+          ></multiselect>
+
           <div class="form-group">
             <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="{{ 'utils.search.search' | translate }}">
           </div>
@@ -43,5 +36,5 @@
       </div>
     </div>
   </div>
-  <ng-include src="'js/utils/_page_scroller.html'" data-ng-init="scrollToId='activities'; scrollToOffset=-50"></ng-include>
+  <div data-ng-if="next" data-ng-include="'js/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
 </section>

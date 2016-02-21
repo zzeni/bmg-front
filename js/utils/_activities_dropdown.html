@@ -1,0 +1,16 @@
+<div class="input-group" ng-click="toggleSelect()">
+  <span class="input-group-addon"><i class="fa fa-compass fa-2x"></i></span>
+  <button tabindex="{{tabindex}}" title="{{header}}" type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled" ng-class="{'error': !valid()}">
+    <div ng-style="maxWidth" style="overflow: hidden; text-overflow: ellipsis;">{{header}}</div>
+  </button>
+  <span class="input-group-addon caret"><i class="fa fa-chevron-down"></i></span>
+
+  <ul class="dropdown-menu" ng-style="ulStyle">
+    <li data-stopPropagation="true" ng-repeat="i in items | filter:filter">
+      <span ng-if="$index===0 || items[$index-1].model.category!==i.model.category" class="category"> {{ i.model.category }}</span>
+      <a ng-click="select($event, i)" style="cursor:pointer;">
+        <div ng-include="'/img/icons/activities/' + i.model.icon_name"></div>
+        <i class="glyphicon" ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label}}</a>
+    </li>
+  </ul>
+</div>

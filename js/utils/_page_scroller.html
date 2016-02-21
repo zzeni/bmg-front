@@ -1,6 +1,5 @@
-<div class="page-scroller hidden-cs">
+<div class="page-scroller hidden-cs {{scrollToOffset}}">
   <a href="#" class="btn btn-circle" data-scroll-to="{{ scrollToId }}" data-duration="1000" data-easing="easeInOutCubic" data-offset="{{scrollToOffset || 0}}">
-    <i class="fa fa-angle-double-down faa-pulse animated" data-ng-show="!scrollUp" data-ng-hide="scrollUp"></i>
-    <i class="fa fa-angle-double-up faa-pulse animated" data-ng-show="scrollUp" data-ng-hide="!scrollUp"></i>
+    <i class="fa faa-pulse animated ng-class:(scrollToId==='top'? 'fa-angle-double-up' : 'fa-angle-double-down');"></i>
   </a>
 </div>

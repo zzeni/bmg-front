@@ -4,7 +4,7 @@ bmg.factory('initializer', ['$log', function ($log) {
   var INTRO_MIN_HEIGHT = 660;
 
   var factory, slideShow, showMoto, fitIntro, updateCanvas, flowControlError,
-      fitSearch, fitActivityDropdown1, fitActivityDropdown2, sumElementsWidth;
+      fitSearch, fitActivityDropdown1, fitActivityDropdown2;
 
   var windowObj = $(window),
       bgImgId = 1;
@@ -102,24 +102,6 @@ bmg.factory('initializer', ['$log', function ($log) {
     search.css('top', proposed_offset);
   };
 
-  sumElementsWidth = function (elArray) {
-    var result = 0, widths = elArray.map(function() { return $(this).outerWidth(); });
-    $.each(widths, function (i) { result = result + widths[i]; });
-    return result;
-  };
-
-  fitActivityDropdown1 = function fitActivityDropdown1() {
-    var dropdownMenu = $('.activity-dropdown-menu-1'),
-        dropdownToggle = $('.activity-dropdown-1:first'),
-        offsetTop = dropdownToggle.offset().top + dropdownToggle.outerHeight(),
-        comulWidth = sumElementsWidth($('.activity-dropdown-1'));
-    dropdownMenu.css({
-      top: offsetTop + 'px',
-      left: dropdownToggle.offset().left + 'px'
-    });
-    dropdownMenu.width(comulWidth);
-  };
-
   factory = {
     initializePageScrollers: function initializePageScrollers() {
       setTimeout(function() { $('.page-scroller').removeClass('hidden-cs'); }, 3000);
@@ -148,31 +130,7 @@ bmg.factory('initializer', ['$log', function ($log) {
       setTimeout(showMoto, 1000, canvas);
     },
 
-    initializeSearch: function initializeSearch() {
-      $(window).on("resize", function () {
-        fitSearch();
-        $('.activity-dropdown-menu-1').removeClass('open');
-        $('.activity-dropdown-menu-2').removeClass('open');
-        $('.activity-dropdown-1.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-        $('.activity-dropdown-2.caret .fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-      });
-      setTimeout(fitSearch, 200);
-
-      $('.activity-select span').on('click', function () {
-        $('#activityDropdown').click();
-      });
-
-      $('.activity-dropdown-1').on('click', function () {
-        if ($(this).hasClass('caret')) {
-          $('.activity-dropdown-menu-1').toggleClass('open');
-          $('.activity-dropdown-1.caret .fa').toggleClass('fa-chevron-down').toggleClass('fa-chevron-up');
-        } else if (!$('.activity-dropdown-menu-1').hasClass('open')) {
-          $('.activity-dropdown-menu-1').addClass('open');
-          $('.activity-dropdown-1.caret .fa').removeClass('fa-chevron-down').addClass('fa-chevron-up');
-        }
-        if ($('.activity-dropdown-menu-1').hasClass('open')) fitActivityDropdown1();
-      });
-    },
+    initializeSearch: function initializeSearch() {},
 
     initializeHowItWorks: function initializeHowItWorks() {
       $(window).on('scroll', function () {

@@ -1,26 +1,15 @@
-<section class="hidden info-boxes" id="how-it-works">
+<section id="howitworks" data-ng-init="next=sections.howitworks.next">
   <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-6 first">
+    <h2 class="heading">{{ 'home.howitworks.HEADING' | translate }}</h2>
+    <div class="row info-boxes">
+      <article class="col-md-4 col-sm-6 first focused" data-ng-repeat="index in [1, 2, 3]">
         <div class="rotated">
-          <h3 class="front">how it works</h3>
-          <h3 class="back">how it works</h3></div>
-        <p>Just tell us your next destination and we'll find the best matching local guides for you.</p><a class="btn btn-default" href="#">read more</a></div>
-      <div class="col-md-3 col-sm-6 col-xs-6 second">
-        <div class="rotated">
-          <h3 class="front">it's easy</h3>
-          <h3 class="back">it's easy</h3></div>
-        <p>Joining BeMyGuide's community takes only few easy steps. Once in, you're all set to explore the world!</p><a class="btn btn-default" href="#">read more</a></div>
-      <div class="col-md-3 col-sm-6 col-xs-6 third">
-        <div class="rotated">
-          <h3 class="front">what you get</h3>
-          <h3 class="back">what you get</h3></div>
-        <p>With us you get the freedom to chose the type, the place and the company for your adventure.</p><a class="btn btn-default" href="#">read more</a></div>
-      <div class="col-md-3 col-sm-6 col-xs-6 fourth">
-        <div class="rotated">
-          <h3 class="front">you'll love it! :)</h3>
-          <h3 class="back">you'll love it! :)</h3></div>
-        <p>You'll see places you've never imagined before. You'll get to know people you've always wanted to know!</p><a class="btn btn-default" href="#">read more</a></div>
+          <h3 class="front">{{ 'home.howitworks.article' + index + '.title' | translate }}</h3>
+          <h3 class="back">{{ 'home.howitworks.article' + index + '.title' | translate }}</h3>
+        </div>
+        <p>{{ 'home.howitworks.article' + index + '.body' | translate }}</p><a class="btn btn-default" data-ng-href="{{ 'home.howitworks.article' + index + '.url' | translate }}">{{ 'common.read_more' | translate }}</a>
+      </article>
     </div>
+    <div data-ng-if="next" data-ng-include="'js/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
   </div>
 </section>
