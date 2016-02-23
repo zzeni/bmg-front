@@ -189,7 +189,11 @@
   margin-left: 0;
   margin-right: 0;
 }
-
+#searchBox input.country-toggle {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
 #activityDropdown {
   padding: 0;
   margin: 0;
@@ -206,7 +210,9 @@
 #activityDropdown button:focus,
 #activityDropdown button:visited,
 #activityDropdown button:active {
-  border: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
   margin: 0;
   background-color: transparent;
   color: #999;
@@ -214,7 +220,6 @@
   padding-left: 0;
   font-size: 1em;
   height: 2em;
-  box-shadow: none;
   text-align: left;
 }
 #activityDropdown ul {
@@ -252,6 +257,25 @@
   height: 1.2em;
   fill: cadetblue;
 }
+#countryDropdown {
+  margin-top: 0;
+  max-height: 170px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 4px;
+  width: 100%;
+  padding: 0px;
+  border: 15px solid white;
+  display: block;
+}
+#countryDropdown li {
+  line-height: 1.6em;
+  padding: 2px 5px;
+}
+#countryDropdown li:hover {
+  background-color: #f6f6f6;
+}
+
 /*
     @media: sm
 */
@@ -481,8 +505,7 @@
   color: #303030;
   border-color: #303030;
 }
-#blog .blog-grid {
-  display: table;
+#blog .grid-box {
   margin-bottom: 30px;
   background-color: black;
   padding: 5px;
@@ -528,10 +551,8 @@
   opacity: 1;
   left: 0px;
 }
-#blog .part-left,
-#blog .part-right {
-  width: 50%;
-  display: table-cell;
+#blog .grid-box-col {
+  padding: 0;
 }
 
 /* =======================================
@@ -577,7 +598,7 @@
 }
 #howitworks .info-boxes .article:hover h3,
 #howitworks .info-boxes .article h3.hover {
-  color: #5ba0d0;
+/*  color: #5ba0d0;*/
 }
 #howitworks .info-boxes .article {
   display: inline-block;
@@ -596,6 +617,7 @@
   text-transform: capitalize;
 }
 #howitworks .rotated .back {
+  color: #46b8da;
   transform: translate3d(0, 0, -1.2em) rotate3d(1, 0, 0, 90deg);
   opacity: 0;
   margin: 0;
@@ -615,4 +637,25 @@
 #howitworks .page-scroller a {
   color: #303030;
   border-color: #303030;
+}
+
+#howitworks.dark {
+  background-color: #313131;
+  color: #fafafa;
+  padding: 50px 0;
+}
+#howitworks.dark .page-scroller a {
+  color: white;
+  border-color: white;
+}
+#howitworks.dark .heading {
+  color: #46b8da;
+  font-size: 3em;
+}
+#howitworks.dark .info-boxes .back {
+  color: #F1513A;
+}
+#howitworks.dark .info-boxes .btn {
+  background-color: #46b8da;
+  color: white;
 }

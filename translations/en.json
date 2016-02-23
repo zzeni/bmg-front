@@ -111,8 +111,8 @@
   },
   "utils": {
     "search": {
-      "places": "places",
-      "activities": "actions",
+      "places": "country",
+      "activities": "activity",
       "search": "Search",
       "selected": " selected"
     },

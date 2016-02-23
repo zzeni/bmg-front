@@ -1,9 +1,10 @@
 bmg.controller('homeController', ['$scope', 'initializer', 'utils', function ($scope, initializer, utils) {
 
   $scope.activities = [];
-  $scope.activitiesByCategory = {};
+  $scope.countries = [];
 
   utils.loadActivities($scope);
+  utils.loadCountries($scope);
 
   $scope.initializeIntro = initializer.initializeIntro;
   $scope.initializeSearch = initializer.initializeSearch;

@@ -12,16 +12,20 @@
             <!-- <span class="input-group-addon"><i class="fa fa-map-o fa-2x"></i></span>-->
             <span class="input-group-addon"><i class="fa fa-globe fa-2x"></i></span>
             <!-- <span class="input-group-addon"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
-            <input type="text" class="form-control input-lg" placeholder="{{ 'utils.search.places' | translate }}" describedby="inpit-addon-location">
+            <div class="form-control input-lg">
+              <input type="text" class="input country-toggle" placeholder="{{ 'utils.search.places' | translate }}" describedby="inpit-addon-location" data-ng-model="countrySelect" value="{{ selectedCountry? selectedCountry.en_name : ''}}" data-ng-click="">
+              <ul id="countryDropdown" class="dropdown-menu" data-ng-hide="!countrySelect.length || selectedCountry">
+                <li ng-repeat="country in countries | filter:countrySelect" ng-click="selectedCountry = country" style="cursor:pointer" ng-class="{active:(selectedCountry && selectedCountry.id === country.id)}" ng-mouseenter="selectedCountry = country" translate="{{ country.en_name }}"></li>
+              </ul>
+            </div>
           </div>
 
           <multiselect
-
             class="form-control input-lg"
             ng-class="(activities.length === 0) ? 'loading' : ''"
             id="activityDropdown"
             ng-model="selectedActivities"
-            options="a.name for a in activities"
+            options="a.title for a in activities"
             multiple="true"
             ms-header="{{ 'utils.search.activities' | translate }}"
             scroll-after-rows="6"
