@@ -398,3 +398,20 @@ a.navbar-brand .div-bg {
   height: auto;
   fill: cadetblue;
 }
+
+ul.social-icons {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+ul.social-icons li {
+  text-align: center;
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 1.6em;
+}
+ul.social-icons li a,
+ul.social-icons li a:hover {
+  font-weight: normal;
+}

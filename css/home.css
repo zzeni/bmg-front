@@ -19,14 +19,11 @@
     @media: xs
 */
 @media screen and (max-width: 767px) {
-  section.info-boxes .first,
-  section.info-boxes .second,
-  section.info-boxes .third,
-  section.info-boxes .fourth {
-    left: 0 !important;
-    -webkit-transition: opacity 1.2s !important;
-    -moz-transition: opacity 1.2s !important;
-    transition: opacity 1.2s !important;
+  #howitworks .info-boxes {
+    padding: 1em 0 !important;
+  }
+  #howitworks .info-boxes .btn {
+    margin: 0 0 4em 0;
   }
 }
 
@@ -518,6 +515,7 @@
   position: relative;
 }
 #blog article img {
+  width: 100%;
   opacity: 1;
   -webkit-transition: opacity .8s ease-in-out;
   -moz-transition: opacity .8s ease-in-out;
@@ -555,13 +553,24 @@
   padding: 0;
 }
 
+#blog.dark {
+  background-color: #313131;
+  padding: 50px 0;
+}
+#blog.dark .heading{
+  color: #fafafa;
+}
+#blog .page-scroller a {
+  color: white;
+  border-color: white;
+}
 /* =======================================
 6. Section: How It Works
 ======================================== */
 
 #howitworks {
-  margin-top: 6em;
-  margin-bottom: 6em;
+  margin-top: 100px;
+  margin-bottom: 250px;
 }
 #howitworks .heading {
   padding: 1em 0;
@@ -570,35 +579,10 @@
   margin: auto;
 }
 #howitworks .info-boxes {
-  padding: 4em 0;
-}
-#howitworks .info-boxes .first,
-#howitworks .info-boxes .second {
-  left: -4em;
-  opacity: 0;
-  -webkit-transition: opacity 1.5s, left 1.5s;
-  -moz-transition: opacity 1.5s, left 1.5s;
-  transition: opacity 1.5s, left 1.5s;
-}
-#howitworks .info-boxes .third,
-#howitworks .info-boxes .fourth {
-  left: 4em;
-  opacity: 0;
-  -webkit-transition: opacity 1.5s, left 1.5s;
-  -moz-transition: opacity 1.5s, left 1.5s;
-  transition: opacity 1.5s, left 1.5s;
-}
-#howitworks .info-boxes .focused {
-  left: 0;
-  opacity: 1;
-  perspective: 900px;
+  padding: 2em 0;
 }
 #howitworks .info-boxes a {
   margin: 1.5em 0;
-}
-#howitworks .info-boxes .article:hover h3,
-#howitworks .info-boxes .article h3.hover {
-/*  color: #5ba0d0;*/
 }
 #howitworks .info-boxes .article {
   display: inline-block;
@@ -631,14 +615,13 @@
   opacity: 0;
 }
 #howitworks .info-boxes p {
-  margin-top: 5em;
-  margin-bottom: 2em;
+  padding-top: 5em;
+  padding-bottom: 2em;
 }
 #howitworks .page-scroller a {
   color: #303030;
   border-color: #303030;
 }
-
 #howitworks.dark {
   background-color: #313131;
   color: #fafafa;
