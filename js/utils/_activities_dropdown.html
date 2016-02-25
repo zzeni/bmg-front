@@ -1,9 +1,8 @@
 <div class="input-group" ng-click="toggleSelect()">
   <span class="input-group-addon"><i class="fa fa-compass fa-2x"></i></span>
-  <button tabindex="{{tabindex}}" title="{{header}}" type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled" ng-class="{'error': !valid()}">
+  <button tabindex="{{tabindex}}" title="{{header}}" type="button" class="btn btn-default dropdown-toggle form-control input" ng-disabled="disabled" ng-class="{'error': !valid()}">
     <div ng-style="maxWidth" style="overflow: hidden; text-overflow: ellipsis;">{{header}}</div>
   </button>
-  <span class="input-group-addon caret"><i class="fa fa-chevron-down"></i></span>
 
   <ul class="dropdown-menu" ng-style="ulStyle">
     <li data-stopPropagation="true" ng-repeat="i in items | filter:filter">
@@ -13,4 +12,5 @@
         <i class="glyphicon" ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label}}</a>
     </li>
   </ul>
+  <span class="input-group-addon caret"><i class="fa fa-chevron-down"></i></span>
 </div>
