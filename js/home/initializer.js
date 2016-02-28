@@ -114,6 +114,7 @@ bmg.factory('initializer', ['$log', function ($log) {
 
       var canvas = document.getElementById('introCanvas');
 
+      fitIntro(canvas);
       slideShow(canvas);
 
       setInterval(
