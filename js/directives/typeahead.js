@@ -4,13 +4,14 @@ bmg.directive('typeahead', function ($timeout) {
     scope: {
       items: '=',
       prompt: '=',
+      template: '@',
       label: '@',
       model: '=',
       onSelect: '&'
     },
     link: function (scope, elem, attrs) {
-      scope.handleSelection = function (selectedItem, label) {
-        scope.filter = selectedItem[label];
+      scope.handleSelection = function (selectedItem) {
+        scope.filter = selectedItem[scope.label];
         scope.model = selectedItem;
         scope.current = 0;
         scope.selected = true;
@@ -30,6 +31,8 @@ bmg.directive('typeahead', function ($timeout) {
         scope.current = index;
       };
     },
-    templateUrl: '/js/directives/_typeahead.html'
+    templateUrl: function (element, attrs) {
+      return attrs['template'] || '/js/directives/_typeahead.html';
+    }
   };
 });

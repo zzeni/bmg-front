@@ -211,19 +211,19 @@
   box-shadow: none;
   outline: none;
 }
-#activityDropdown {
+#searchBox .input-dropdown {
   padding: 0;
   margin: 0 0 2px 0;
   border-left: 0;
   border-right: 0;
 }
-#activityDropdown span {
+#searchBox .input-dropdown span {
   border-color: transparent;
 }
-#activityDropdown button,
-#activityDropdown button:focus,
-#activityDropdown button:visited,
-#activityDropdown button:active {
+#searchBox .input-dropdown .input,
+#searchBox .input-dropdown .input:focus,
+#searchBox .input-dropdown .input:visited,
+#searchBox .input-dropdown .input:active {
   border: none;
   box-shadow: none;
   outline: none;
@@ -233,17 +233,19 @@
   padding: .5em;
   padding-left: 0;
   font-size: 1em;
-  height: 2em;
   text-align: left;
   min-width: 128px;
 }
-#activityDropdown ul {
+#searchBox .input-dropdown ul {
   margin-top: 1px;
   width: 100%;
   padding: 0px;
   border: 15px solid white;
+  max-height: 170px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-#activityDropdown.loading ul {
+#searchBox .input-dropdown.loading ul {
   height: 120px;
   padding: 10px;
   background-image: url(/img/baloon-blue-loading-rotate.gif);
@@ -254,20 +256,20 @@
   -moz-transition: all 1.2s ease;
   transition: all 1.2s ease;
 }
-#activityDropdown ul input {
+#searchBox .input-dropdown ul input {
   width: 100%;
   margin-bottom: 10px;
 }
-#activityDropdown ul span.category {
+#searchBox .input-dropdown ul span.category {
   color: #999;
 }
-#activityDropdown ul a div {
+#searchBox .input-dropdown ul a div {
   display: inline;
   position: relative;
   top: 2px;
   left: -1px;
 }
-#activityDropdown ul svg {
+#searchBox .input-dropdown ul svg {
   max-width: 1.2em;
   height: 1.2em;
   fill: cadetblue;

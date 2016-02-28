@@ -1,4 +1,6 @@
 <input type="text" ng-model="filter" placeholder="{{prompt}}" ng-keydown="selected=false" ng-click="(!filter.length||!selected)&&(selected=!selected)"/><br/>
-<ul class="dropdown-menu" ng-hide="selected" ng-show="!selected">
-	<li class="item" ng-repeat="item in items | filter:filter track by $index" ng-click="handleSelection(item, label)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">{{item[label]}}</li>
-</ul>
+<div ng-class="{open:!selected}">
+  <ul class="dropdown-menu" ng-hide="selected" ng-show="!selected">
+    <li class="item" ng-repeat="item in items | filter:filter track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">{{item[label]}}</li>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<div class="input-group">
+  <!-- <span class="input-group-addon"><i class="fa fa-location-arrow fa-2x"></i></span> -->
+  <!-- <span class="input-group-addon"><i class="fa fa-map-marker fa-2x"></i></span> -->
+  <!-- <span class="input-group-addon"><i class="fa fa-map-o fa-2x"></i></span>-->
+  <span class="input-group-addon"><i class="fa fa-globe fa-2x"></i></span>
+  <!-- <span class="input-group-addon"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
+
+  <div ng-class="{open:!selected}">
+    <ul class="dropdown-menu" ng-hide="selected" ng-show="!selected">
+      <li class="item" ng-repeat="item in items | filter:filter track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)"><a href="#/">{{item[label]}}</a></li>
+    </ul>
+  </div>
+
+  <input type="text" class="input" ng-model="filter" placeholder="{{ prompt }}" ng-keydown="selected=false" ng-click="(!filter.length||!selected)&&(selected=!selected)"/><br/>
+</div>

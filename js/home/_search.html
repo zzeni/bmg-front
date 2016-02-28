@@ -7,29 +7,21 @@
         <form class="form-inline block-center">
           <input type="hidden" name="activities" value="{{ selectedActivities||[] | map:'id' }}">
           <input type="hidden" name="country" value="{{ selectedCountry.id }}">
-          <div class="input-group">
-            <!-- <span class="input-group-addon"><i class="fa fa-location-arrow fa-2x"></i></span> -->
-            <!-- <span class="input-group-addon"><i class="fa fa-map-marker fa-2x"></i></span> -->
-            <!-- <span class="input-group-addon"><i class="fa fa-map-o fa-2x"></i></span>-->
-            <span class="input-group-addon"><i class="fa fa-globe fa-2x"></i></span>
-            <!-- <span class="input-group-addon"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
-            <div class="form-control input-lg">
-              <typeahead items="countries" prompt="'utils.search.places' | translate" label="en_name" model="selectedCountry" />
-            </div>
+
+          <div class="form-control input-dropdown input-lg">
+            <typeahead items="countries" prompt="'utils.search.places' | translate" label="en_name" model="selectedCountry" template="/js/home/_countries_dropdown.html" />
           </div>
 
-          <multiselect
-            class="form-control input-lg"
-            ng-class="(activities.length === 0) ? 'loading' : ''"
-            id="activityDropdown"
-            ng-model="selectedActivities"
-            options="a.title for a in activities"
-            multiple="true"
-            ms-header="{{ 'utils.search.activities' | translate }}"
-            scroll-after-rows="6"
-            data-compare-by="id"
-            tabindex="-1"
-          ></multiselect>
+          <div class="form-control input-dropdown input-lg" ng-class="(activities.length === 0) ? 'loading' : ''">
+            <multiselect
+              id="activityDropdown"
+              ng-model="selectedActivities"
+              options="a.title for a in activities"
+              multiple="true"
+              ms-header="{{ 'utils.search.activities' | translate }}"
+              data-compare-by="id"
+            ></multiselect>
+          </div>
 
           <div class="form-group">
             <input type="button" class="form-control btn btn-info btn-lg input-lg col-sm-2" value="{{ 'utils.search.search' | translate }}">
