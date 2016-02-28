@@ -1,5 +1,5 @@
-bmg.filter('range', function() {
-  return function(input, total) {
+bmg.filter('range', function () {
+  return function (input, total) {
     total = parseInt(total);
 
     for (var i=0; i<total; i++) {
@@ -9,8 +9,8 @@ bmg.filter('range', function() {
     return input;
   };
 })
-.filter('uniq', function() {
-    return function(input, key) {
+.filter('uniq', function () {
+    return function (input, key) {
         var unique = {};
         var uniqueList = [];
         for(var i = 0; i < input.length; i++){
@@ -21,4 +21,13 @@ bmg.filter('range', function() {
         }
         return uniqueList;
     };
+})
+.filter('map', function () {
+  return function (input, key) {
+    var result = [];
+    for (var i=0; i<input.length; i++) {
+      result.push(input[i][key]);
+    }
+    return result;
+  };
 });

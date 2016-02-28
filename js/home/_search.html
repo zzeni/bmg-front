@@ -5,7 +5,8 @@
         <h1 translate="home.intro.INTRO_CAPTION"></h1>
         <p><em>{{ "home.intro.INTRO_TEXT" | translate }}</em></p>
         <form class="form-inline block-center">
-          <input type="hidden" value="{{ selectedActivities }}">
+          <input type="hidden" name="activities" value="{{ selectedActivities||[] | map:'id' }}">
+          <input type="hidden" name="country" value="{{ selectedCountry.id }}">
           <div class="input-group">
             <!-- <span class="input-group-addon"><i class="fa fa-location-arrow fa-2x"></i></span> -->
             <!-- <span class="input-group-addon"><i class="fa fa-map-marker fa-2x"></i></span> -->
@@ -13,10 +14,7 @@
             <span class="input-group-addon"><i class="fa fa-globe fa-2x"></i></span>
             <!-- <span class="input-group-addon"><i class="fa fa-thumb-tack fa-2x"></i></span> -->
             <div class="form-control input-lg">
-              <input type="text" class="input country-toggle" placeholder="{{ 'utils.search.places' | translate }}" describedby="inpit-addon-location" data-ng-model="countrySelect" value="{{ selectedCountry? selectedCountry.en_name : ''}}" data-ng-click="">
-              <ul id="countryDropdown" class="dropdown-menu" data-ng-hide="!countrySelect.length || selectedCountry">
-                <li ng-repeat="country in countries | filter:countrySelect" ng-click="selectedCountry = country" style="cursor:pointer" ng-class="{active:(selectedCountry && selectedCountry.id === country.id)}" ng-mouseenter="selectedCountry = country" translate="{{ country.en_name }}"></li>
-              </ul>
+              <typeahead items="countries" prompt="'utils.search.places' | translate" label="en_name" model="selectedCountry" />
             </div>
           </div>
 

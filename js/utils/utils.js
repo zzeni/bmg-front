@@ -20,7 +20,6 @@ bmg.factory('utils', ['$log', '$translate', 'api', 'config', '$filter', function
     });
   };
 
-
   factory.loadActivities = function loadActivities(scope) {
     $log.debug('Retrieving the list of activities ..');
 
