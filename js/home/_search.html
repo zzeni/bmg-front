@@ -8,11 +8,11 @@
           <input type="hidden" name="activities" value="{{ selectedActivities||[] | map:'id' }}">
           <input type="hidden" name="country" value="{{ selectedCountry.id }}">
 
-          <div class="form-control input-dropdown input-lg">
+          <div class="form-control input-dropdown input-lg" ng-class="{loading:!countries.length,selected:selectedCountry}">
             <typeahead items="countries" prompt="'utils.search.places' | translate" label="en_name" model="selectedCountry" template="/js/home/_countries_dropdown.html" />
           </div>
 
-          <div class="form-control input-dropdown input-lg" ng-class="(activities.length === 0) ? 'loading' : ''">
+          <div class="form-control input-dropdown input-lg" ng-class="{loading:!activities.length,selected:selectedActivities.length}">
             <multiselect
               id="activityDropdown"
               ng-model="selectedActivities"

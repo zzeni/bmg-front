@@ -182,22 +182,9 @@
 #searchBox .form-inline .input-group {
   padding: 2px 0;
 }
-#searchBox .form-inline .input-group input[type=text] {
-  border-left: 0px;
-  border-right: 0px;
-  padding-left: 0px;
-}
 #searchBox .form-inline .input-group .input-group-addon {
-  border-right: 0;
   background: #fff;
-}
-#searchBox .form-inline .input-group .caret {
-  border-left: 0;
-}
-#searchBox .form-inline .input {
-  text-align: left;
-  padding-left: 2px;
-  border-left: 0;
+  border-color: transparent;
 }
 #searchBox .fa {
   color: #46b8da;
@@ -206,19 +193,11 @@
   margin-left: 0;
   margin-right: 0;
 }
-#searchBox input.country-toggle {
-  border: none;
-  box-shadow: none;
-  outline: none;
-}
 #searchBox .input-dropdown {
   padding: 0;
   margin: 0 0 2px 0;
   border-left: 0;
   border-right: 0;
-}
-#searchBox .input-dropdown span {
-  border-color: transparent;
 }
 #searchBox .input-dropdown .input,
 #searchBox .input-dropdown .input:focus,
@@ -229,12 +208,18 @@
   outline: none;
   margin: 0;
   background-color: transparent;
-  color: #999;
   padding: .5em;
   padding-left: 0;
   font-size: 1em;
   text-align: left;
   min-width: 128px;
+  width: 100%;
+}
+#searchBox .input-dropdown button {
+  color: #999;
+}
+#searchBox .input-dropdown.selected .input {
+  color: #313131;
 }
 #searchBox .input-dropdown ul {
   margin-top: 1px;
@@ -256,10 +241,6 @@
   -moz-transition: all 1.2s ease;
   transition: all 1.2s ease;
 }
-#searchBox .input-dropdown ul input {
-  width: 100%;
-  margin-bottom: 10px;
-}
 #searchBox .input-dropdown ul span.category {
   color: #999;
 }
@@ -273,25 +254,6 @@
   max-width: 1.2em;
   height: 1.2em;
   fill: cadetblue;
-}
-#countryDropdown {
-  margin: 0;
-  max-height: 170px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  padding: 0px;
-  border: 15px solid white;
-  display: block;
-}
-#countryDropdown li {
-  color: #313131;
-  line-height: 1.6em;
-  padding: 2px 5px;
-  z-index: 99999999;
-}
-#countryDropdown li:hover {
-  background-color: #f6f6f6;
 }
 
 /*

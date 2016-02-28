@@ -15,11 +15,11 @@ bmg.directive('typeahead', function ($timeout) {
         scope.model = selectedItem;
         scope.current = 0;
         scope.selected = true;
-        if (scope.onSelect) {
-          $timeout(function () {
-            scope.onSelect();
-          }, 200);
-        }
+//        if (scope.onSelect) {
+//          $timeout(function () {
+//            scope.onSelect();
+//          }, 200);
+//        }
       };
       scope.current = 0;
       scope.filter = "";
