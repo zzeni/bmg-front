@@ -53,6 +53,10 @@ bmg.config([
       .state('signup', {
         url: '/signup',
         templateUrl: 'templates/session/_signup.html'
+      })
+      .state('profile', {
+        url: '/profile',
+        templateUrl: 'templates/user/_profile.html'
       });
 
     $urlRouterProvider.otherwise('home');
