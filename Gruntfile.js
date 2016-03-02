@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         separator: ';\n'
       },
       dist: {
-        src: ['src/config.js', 'src/app.js', 'src/api.js', 'src/filters.js', 'src/directives/**/*.js', 'src/services/**/*.js', 'src/controllers/**/*.js'],
+        src: ['src/app.js', 'src/api.js', 'src/filters.js', 'src/directives/**/*.js', 'src/services/**/*.js', 'src/controllers/**/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     ngconstant: {
       options: {
         name: 'config',
-        dest: 'js/config.js',
+        dest: 'dist/config.js',
         wrap: '"use strict";\n\n{%= __ngModule %}',
         space: '  ',
         constants: {
@@ -60,6 +60,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ng-constant');
 
   // Tasks
+  grunt.registerTask('config', 'ngconstant:production');
   grunt.registerTask('build', ['concat', 'uglify']);
-  grunt.registerTask('default', ['ngconstant:production', 'build']);
+  grunt.registerTask('default', ['config', 'build']);
 };
