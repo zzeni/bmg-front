@@ -263,7 +263,7 @@ bmg.controller('homeController', ['$scope', 'initializer', 'utils', function ($s
     },
     whybemyguide: {
       next: 'blog',
-      offset: -50
+      offset: -100
     },
     blog: {
       next: 'howitworks'
@@ -273,6 +273,29 @@ bmg.controller('homeController', ['$scope', 'initializer', 'utils', function ($s
       offset: 50
     }
   };
+  
+  $scope.interests = [
+    'art',
+    'birds',
+    'astronomy',
+    'geology',
+    'music',
+    'dancing',
+    'butterflies',
+    'mushrooms',
+    'archeology',
+    'observation',
+    'reading',
+    'photography',
+    'religion',
+    'sports',
+    'fishing',
+    'botany',
+    'ecology',
+    'history',
+    'travel',
+    'yoga'
+  ];
 }]);;
 bmg.factory('initializer', ['$log', function ($log) {
   "use strict";
