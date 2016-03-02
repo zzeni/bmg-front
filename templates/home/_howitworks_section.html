@@ -1,4 +1,4 @@
-<section id="howitworks" class="dark" data-ng-init="next=sections.howitworks.next">
+<section id="howitworks" data-ng-init="next=sections.howitworks.next">
   <div class="container">
     <h2 class="heading">{{ 'home.howitworks.HEADING' | translate }}</h2>
     <div class="row info-boxes">
@@ -10,6 +10,6 @@
         <p>{{ 'home.howitworks.article' + index + '.body' | translate }}</p><a class="btn btn-default" data-ng-href="{{ 'home.howitworks.article' + index + '.url' | translate }}">{{ 'common.read_more' | translate }}</a>
       </article>
     </div>
-    <div data-ng-if="next" data-ng-include="'js/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
+    <div data-ng-if="next" data-ng-include="'templates/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
   </div>
 </section>

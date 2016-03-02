@@ -1,4 +1,4 @@
-<section id="blog" class="dark" data-ng-init="next=sections.blog.next">
+<section id="blog" data-ng-init="next=sections.blog.next">
   <div class="container">
     <h2 class="heading" translate="home.blog.HEADING"></h2>
     <div class="row">
@@ -40,6 +40,6 @@
       </div>
     </div>
 
-    <div data-ng-if="next" data-ng-include="'js/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
+    <div data-ng-if="next" data-ng-include="'templates/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
   </div>
 </section>

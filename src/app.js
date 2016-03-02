@@ -38,26 +38,23 @@ bmg.config([
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: '/home.html',
+        templateUrl: '/templates/home/_home.html',
         controller: 'homeController'
       })
       .state('home_new', {
         url: '/home-v1',
-        templateUrl: '/home_new.html',
+        templateUrl: 'templates/home/_home_new.html',
         controller: 'homeController'
       })
       .state('login', {
         url: '/login',
-        templateUrl: '/login.html',
-        controller: 'layoutController'
+        templateUrl: 'templates/session/_login.html'
       })
       .state('signup', {
         url: '/signup',
-        templateUrl: '/signup.html',
-        controller: 'layoutController'
+        templateUrl: 'templates/session/_signup.html'
       });
 
     $urlRouterProvider.otherwise('home');
   }
 ]);
-

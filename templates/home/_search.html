@@ -9,7 +9,7 @@
           <input type="hidden" name="country" value="{{ selectedCountry.id }}">
 
           <div class="form-control input-dropdown input-lg" ng-class="{loading:!countries.length,selected:selectedCountry}">
-            <typeahead items="countries" prompt="'utils.search.places' | translate" label="en_name" model="selectedCountry" template="/js/home/_countries_dropdown.html" />
+            <typeahead items="countries" prompt="'utils.search.places' | translate" label="en_name" model="selectedCountry" template="/templates/home/_countries_dropdown.html" />
           </div>
 
           <div class="form-control input-dropdown input-lg" ng-class="{loading:!activities.length,selected:selectedActivities.length}">
@@ -30,5 +30,5 @@
       </div>
     </div>
   </div>
-  <div data-ng-if="next" data-ng-include="'js/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
+  <div data-ng-if="next" data-ng-include="'templates/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
 </section>

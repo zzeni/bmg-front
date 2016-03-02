@@ -146,33 +146,3 @@ bmg.factory('initializer', ['$log', function ($log) {
 
   return factory;
 }]);
-
-//  showInfoBoxes = function() {
-//    var container, focusBoxes, max_height, offset;
-//    offset = window.pageYOffset + $(window).outerHeight() * 0.66;
-//    container = $('.info-boxes');
-//    container.find('p').height('auto');
-//    if ($(window).outerWidth() > 622) {
-//      max_height = 0;
-//      container.find('p').each(function() {
-//        if ($(this).height() > max_height) {
-//          return max_height = $(this).height();
-//        }
-//      });
-//      container.find('p').height(max_height + 'px');
-//    }
-//    if (offset > container.offset().top) {
-//      if (!container.hasClass('focused')) {
-//        container.addClass('focused');
-//        if ($(window).outerWidth() > 622) {
-//          focusBoxes = function(boxes) {
-//            return container.find(boxes).addClass('focused');
-//          };
-//          focusBoxes('.second, .third');
-//          return setTimeout(focusBoxes, 300, '.first, .fourth');
-//        } else {
-//          return container.find('.first, .second, .third, .fourth').addClass('focused');
-//        }
-//      }
-//    }
-//  };

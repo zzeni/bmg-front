@@ -1,4 +1,5 @@
-bmg.directive('typeahead', function ($timeout) {
+//bmg.directive('typeahead', ['$timeout', function ($timeout) {
+bmg.directive('typeahead', [function () {
   return {
     restrict: 'AEC',
     scope: {
@@ -32,7 +33,7 @@ bmg.directive('typeahead', function ($timeout) {
       };
     },
     templateUrl: function (element, attrs) {
-      return attrs['template'] || '/js/directives/_typeahead.html';
+      return attrs['template'] || '/templates/directives/_typeahead.html';
     }
   };
-});
+}]);

@@ -1,0 +1,14 @@
+<ng-include src="'templates/home/_intro.html'" onload="initializeIntro(); initializePageScrollers()"></ng-include>
+<ng-include src="'templates/home/_search.html'" onload="initializeSearch()"></ng-include>
+<ng-include src="'templates/home/_activities_section.html'"></ng-include>
+<ng-include src="'templates/home/_whybemyguide_new_section.html'"></ng-include>
+<ng-include src="'templates/home/_blog_dark_section.html'"></ng-include>
+<ng-include src="'templates/home/_howitworks_section.html'"></ng-include>
+
+<script type="text/ng-template" id="/_icons.html">
+  <div class="container activity-icons">
+    <div style="display: inline-block; padding: 10px;" ng-repeat="i in [] | range:24">
+      <div ng-include="'/img/icons/activities/' + (i+1) + '.svg'"></div>
+    </div>
+  </div>
+</script>
