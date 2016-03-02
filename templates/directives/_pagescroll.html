@@ -1,4 +1,4 @@
-<div class="page-scroller hidden-cs {{scrollToOffset}}">
+<div ng-if="scrollToId" class="page-scroller hidden-cs {{scrollToOffset}}">
   <a href="#" class="btn btn-circle" data-scroll-to="{{ scrollToId }}" data-duration="1000" data-easing="easeInOutCubic" data-offset="{{scrollToOffset || 0}}">
     <i class="fa faa-pulse animated ng-class:(scrollToId==='top'? 'fa-angle-double-up' : 'fa-angle-double-down');"></i>
   </a>

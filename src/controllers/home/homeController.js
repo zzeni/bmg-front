@@ -22,7 +22,7 @@ bmg.controller('homeController', ['$scope', 'initializer', 'utils', function ($s
     },
     whybemyguide: {
       next: 'blog',
-      offset: -50
+      offset: -100
     },
     blog: {
       next: 'howitworks'

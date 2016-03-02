@@ -10,6 +10,6 @@
         <p>{{ 'home.howitworks.article' + index + '.body' | translate }}</p><a class="btn btn-default" data-ng-href="{{ 'home.howitworks.article' + index + '.url' | translate }}">{{ 'common.read_more' | translate }}</a>
       </article>
     </div>
-    <div data-ng-if="next" data-ng-include="'templates/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
+    <pagescroll next="next" offset="sections[next].offset||0"></pagescroll>
   </div>
 </section>

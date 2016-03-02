@@ -1,7 +1,7 @@
 <section id="whybemyguide" data-ng-init="next=sections.whybemyguide.next">
   <div class="container">
     <h1 class="heading" translate="home.whybemyguide.HEADING"></h1>
-    <div class="row">
+    <div class="row content">
       <article class="col-sm-4" data-ng-repeat="index in [1, 2, 3]">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 image-container">
@@ -12,7 +12,6 @@
         <p class="body">{{ 'home.whybemyguide.article' + index + '.body' | translate }}</p>
       </article>
     </div>
-
-    <div data-ng-if="next" data-ng-include="'templates/utils/_page_scroller.html'" data-ng-init="scrollToId=next; scrollToOffset=(sections[scrollToId].offset||0)"></div>
+    <pagescroll next="next" offset="sections[next].offset||0"></pagescroll>
   </div>
 </section>
