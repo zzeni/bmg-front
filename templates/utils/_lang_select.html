@@ -4,6 +4,6 @@
     {{ getCurrentLanguage() | uppercase }}<span class="caret"></span>
   </button>
   <ul class="dropdown-menu btn-transparrent" ng-mouseleave="langSelectOpen = false" ng-show="langSelectOpen" ng-hide="!langSelectOpen">
-    <li data-ng-repeat="lang in getLanguages()"><a ng-click="changeLanguage(lang)" href="#">{{ lang }}</a></li>
+    <li data-ng-repeat="lang in getLanguages()"><a data-ng-click="changeLanguage($event, lang)" href="#{{ $state.current.url }}">{{ lang }}</a></li>
   </ul>
 </div>

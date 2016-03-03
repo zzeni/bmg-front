@@ -1,4 +1,4 @@
-bmg.directive('pagescroll', [function () {
+app.directive('pagescroll', [function () {
   return {
     restrict: 'AEC',
     scope: {

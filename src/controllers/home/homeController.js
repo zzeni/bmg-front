@@ -1,4 +1,4 @@
-bmg.controller('homeController', ['$scope', 'initializer', 'utils', function ($scope, initializer, utils) {
+app.controller('homeController', ['$scope', 'initializer', 'utils', function ($scope, initializer, utils) {
 
   $scope.activities = [];
   $scope.countries = [];

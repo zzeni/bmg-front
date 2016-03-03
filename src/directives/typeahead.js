@@ -1,5 +1,5 @@
-//bmg.directive('typeahead', ['$timeout', function ($timeout) {
-bmg.directive('typeahead', [function () {
+//app.directive('typeahead', ['$timeout', function ($timeout) {
+app.directive('typeahead', [function () {
   return {
     restrict: 'AEC',
     scope: {

@@ -1,2 +1,2 @@
-bmg.controller('sessionController', ['$scope', function ($scope) {
+app.controller('sessionController', ['$scope', function ($scope) {
 }]);

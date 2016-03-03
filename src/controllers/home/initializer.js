@@ -1,4 +1,4 @@
-bmg.factory('initializer', ['$log', function ($log) {
+app.factory('initializer', ['$log', function ($log) {
   "use strict";
 
   var INTRO_MIN_HEIGHT = 660;

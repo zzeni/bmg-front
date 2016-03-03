@@ -14,7 +14,7 @@
 
 #login, #signup {
   width: 100%;
-  height: 100vh;
+  min-height: 850px;
   background-color: #676767;
   background-image: url(/img/baloon-bg.jpg);
   background-position: center center;

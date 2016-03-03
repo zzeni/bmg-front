@@ -1,4 +1,4 @@
-var bmg = angular.module('bmg', [
+var app = angular.module('app', [
   'ui.router',
   'ui.multiselect',
   'pascalprecht.translate',
@@ -8,7 +8,11 @@ var bmg = angular.module('bmg', [
   'smoothScroll'
 ]);
 
-bmg.config([
+app.controller('mainController', ['$scope', '$state', function ($scope, $state) {
+  $scope.$state = $state;
+}]);
+
+app.config([
   '$logProvider',
   '$translateProvider',
   '$stateProvider',
