@@ -22,7 +22,7 @@ app.factory('utils', ['$log', '$translate', 'api', 'config', '$filter', function
     .success(function(data) {
       var activities = data.data;
       activities.forEach(function (el) {
-        $translate('utils.activities.' + el.translation_key).then(function (translation) {
+        $translate('utils.activities.' + el.name).then(function (translation) {
           el.title = translation;
         });
         $translate('utils.activity_categories.' + el.category).then(function (translation) {

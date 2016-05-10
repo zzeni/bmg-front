@@ -1,26 +1,28 @@
 <section id="signup">
   <div class="container">
     <div class="row">
-        <form method="post" action="" class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-          <h3>{{ 'devise.signup.heading' | translate }}</h3>
-          <fieldset>
-            <input name="email" type="text" placeholder="{{ 'devise.signup.email' |translate }}">
-            <input name="password" type="password" placeholder="{{ 'devise.signup.password' |translate }}">
-            <input name="password_confirmation" type="password" placeholder="{{ 'devise.signup.confirm_password' |translate }}">
-          </fieldset>
+      <div class="col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+          <form name="signupForm" ng-controller="SessionController" ng-submit="signup(credentials)">
+            <h3>{{ 'devise.signup.heading' | translate }}</h3>
+            <fieldset>
+              <input name="email" type="text" placeholder="{{ 'devise.signup.email' |translate }}" ng-model="credentials.email">
+              <input name="password" type="password" placeholder="{{ 'devise.signup.password' |translate }}" ng-model="credentials.password">
+              <input name="password_confirmation" type="password" placeholder="{{ 'devise.signup.confirm_password' |translate }}" ng-model="credentials.passwordConfirmation">
+            </fieldset>
 
-          <div class="help-links">
-            <a href="#/login" class="help-link">{{ 'devise.signup.goto_login' | translate }}</a>
-            <a href="#/password_forgotten" class="help-link">{{ 'devise.signup.didnt_receive_conf_email' | translate }}</a>
-          </div>
+            <div class="help-links">
+              <a href="#/login" class="help-link">{{ 'devise.signup.goto_login' | translate }}</a>
+              <a href="#/password_forgotten" class="help-link">{{ 'devise.signup.didnt_receive_conf_email' | translate }}</a>
+            </div>
 
-          <button class="btn btn-primary" type="submit">
-            {{ 'devise.signup.submit' | translate }}
-          </button>
+            <button class="btn btn-primary" type="submit">
+              {{ 'devise.signup.submit' | translate }}
+            </button>
 
-          <a href="#/fb-signup" class="btn btn-default brand-fb">{{ 'devise.signup.fb_signup' | translate }}</a>
-          <a href="#/home" class="btn btn-default">{{ 'devise.signup.go_back' | translate }}</a>
-        </form>
+            <a href="#/fb-signup" class="btn btn-default brand-fb">{{ 'devise.signup.fb_signup' | translate }}</a>
+            <a href="#/home" class="btn btn-default">{{ 'devise.signup.go_back' | translate }}</a>
+          </form>
+        </div>
     </div>
   </div>
 </section>

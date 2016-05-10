@@ -6,9 +6,9 @@
 
   <ul class="dropdown-menu" ng-style="ulStyle">
     <li data-stopPropagation="true" ng-repeat="i in items | filter:filter">
-      <span ng-if="$index===0 || items[$index-1].model.category!==i.model.category" class="category"> {{ i.model.category }}</span>
+      <span ng-if="$index===0 || items[$index-1].model.category!==i.model.category" class="category"> {{ i.model.category_title }}</span>
       <a ng-click="select($event, i)" style="cursor:pointer;">
-        <div ng-include="'/img/icons/activities/' + i.model.icon_name"></div>
+        <div ng-include="'/img/icons/activities/' + i.model.name + '.svg'"></div>
         <i class="glyphicon" ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label}}</a>
     </li>
   </ul>

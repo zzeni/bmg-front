@@ -118,12 +118,13 @@
     },
     "activities": {
       "ballooning": "ballooning",
-      "biking": "mountain biking",
+      "mountain_biking": "mountain biking",
       "canoeing": "canoeing",
       "canyoning": "canyoning",
       "caving": "caving",
       "climbing": "rock climbing",
-      "high_montain": "high mountaineering",
+      "cycling": "cycling",
+      "high_mountain": "high mountaineering",
       "hiking": "hiking",
       "ice_climbing": "ice climbing",
       "kayaking": "kayaking",
@@ -131,11 +132,12 @@
       "off_piste_skiing": "off piste skiing",
       "paragliding": "paragliding",
       "rafting": "rafting",
+      "rappelling": "rappelling",
       "sailing": "sailing",
-      "scuba": "scuba diving",
-      "sea_kayaking": "sea kayaking",
+      "scuba_diving": "scuba diving",
+      "sea_kayak": "sea kayaking",
       "ski_touring": "ski touring",
-      "skydiving": "skydiving",
+      "sky_diving": "skydiving",
       "snowshoeing": "snowshoeing",
       "splitboard": "splitboarding",
       "wind_surfing": "wind surfing",
@@ -146,7 +148,13 @@
     "activity_categories": {
       "land": "land",
       "air": "air",
-      "water": "water"
+      "water": "water",
+      "bike": "bike",
+      "ski": "ski",
+      "rope": "rope",
+      "mount": "mountain",
+      "sea_water": "sea water",
+      "white_water": "white water"
     }
   }
 }
